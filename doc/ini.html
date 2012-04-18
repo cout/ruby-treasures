@@ -1,0 +1,88 @@
+<html><head><title>ini</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>ini</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module INI_Importable</font></h2></td></tr></table><ul>An INI_Importable can only import INI files and read from the data that was
+read; there is no interface for writing to the data.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Section &lt; Object</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(data)</h3><ul><p>
+
+</ul>
+
+<h3>[](key)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>import(ini_file)</h3><ul><p>
+
+</ul>
+
+<h3>[](section_name)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module INI_Exportable</font></h2></td></tr></table><ul>An INI_Exportable can hold data for an INI file, read and write that data,
+and export the data.  There is no interface for importing an INI File.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Section &lt; INI_Importable</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>[]=<i>(key</i>, value)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>export(ini_file)</h3><ul><p>
+
+</ul>
+
+<h3>new_section(section_name)</h3><ul><p>
+
+</ul>
+
+<h3>[](section_name)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class INI_Reader &lt; Object</font></h2></td></tr></table><ul>An INI Reader is an INI_Importable.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Mixins</font></h2></td></tr></table><table>
+<tr><th align="left">INI_Importable</th><td></td></tr>
+</table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(ini_file)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class INI_Writer &lt; Object</font></h2></td></tr></table><ul>An INI Writer is an INI_Exportable.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Mixins</font></h2></td></tr></table><table>
+<tr><th align="left">INI_Exportable</th><td></td></tr>
+</table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize()</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class INI &lt; INI_Reader</font></h2></td></tr></table><ul>An INI Object is both an INI_Importable and an INI_Exportable.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Mixins</font></h2></td></tr></table><table>
+<tr><th align="left">INI_Exportable</th><td></td></tr>
+</table>
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="io_helper.html">io_helper</a></strong><br>
+
+</body></html>

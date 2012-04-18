@@ -1,0 +1,31 @@
+<html><head><title>hacks/deep_freeze</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/deep_freeze</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Object &lt; Object</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>deep_freeze(max_depth=<i>-1</i>, follow_each=<i>false</i>)</h3><ul><p>Freeze an object and all it's instance variables.  Will not recurse
+past max_depth (specify a negative number to recurse indefinitely).
+<p>To deep-freeze containers (such as Array), specify follow_each=true.
+<p>Note that a class may define its own deep_freeze method if this one
+is not suitable.
+<p>TODO: Does not deep freeze certain data types, such as Binding
+<p>TODO: Does not properly deep freeze classes (will omit class
+variables)
+<p>
+
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Protected Methods</font></h2></td></tr></table>
+
+<h3>deep_freeze_helper(max_depth, follow_each, seen_objs, unfreeze_objs)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="each_instance_variable.html">each_instance_variable</a></strong><br>
+<strong><a href="const_method.html">const_method</a></strong><br>
+<strong><a href="../exc/print_exception.html">../exc/print_exception</a></strong><br>
+<strong><a href="../sync/lock.html">../sync/lock</a></strong><br>
+
+</body></html>

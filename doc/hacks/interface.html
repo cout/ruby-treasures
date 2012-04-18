@@ -1,0 +1,71 @@
+<html><head><title>hacks/interface</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/interface</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Module &lt; Object</font></h2></td></tr></table><ul>A hack to allow a mixin to be used like Java's "interfaces".
+<p>E.g.:
+<pre>
+  module Foo
+    interface_method :foo
+    interface_method :bar
+  end
+<p>  class XYZ
+    def bar
+    end
+  end
+<p>  class Bar &lt; XYZ
+    include Foo
+    def foo
+      puts "foo"
+    end
+  end
+<p>  b = Bar.new
+  assert_object_includes_complete(b, Foo)
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>includes_module?(mod)</h3><ul><p>Determine if a class includes a module, in O(n) time.
+<p><p>
+<p><strong>Returns:</strong> true if the class includes the module, false otherwise.
+<p>
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Private Methods</font></h2></td></tr></table>
+
+<h3>interface_method(symbol)</h3><ul><p>Declare an abstract method.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>symbol&nbsp;&nbsp;</th><td>the name of the method.
+</td></tr>
+</table>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>assert_class_includes(klass, mod)</h3><ul><p>Determine if a class includes a module, in O(n) time.
+<p><p>
+<p><strong>Returns:</strong> true if the class includes the module, false otherwise.
+<p>
+</ul>
+
+<h3>assert_object_includes(obj, mod)</h3><ul><p>Determine if an object's class includes a module, in O(n) time.
+<p><p>
+<p><strong>Returns:</strong> true if the object's class includes the module, false otherwise.
+<p>
+</ul>
+
+<h3>assert_class_includes_complete(klass, mod)</h3><ul><p>Determine if a class includes a module and implements all the module's
+abstract methods, in O(n+m) time.
+<p><p>
+<p><strong>Returns:</strong> true if the class includes the module, false otherwise.
+<p>
+</ul>
+
+<h3>assert_object_includes_complete(obj, mod)</h3><ul><p>Determine if an object's class includes a module and implements all the
+module's abstract methods, in O(n+m) time.
+<p><p>
+<p><strong>Returns:</strong> true if the object's class includes the module, false otherwise.
+<p>
+</ul>
+
+</body></html>

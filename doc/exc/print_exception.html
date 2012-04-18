@@ -1,0 +1,27 @@
+<html><head><title>exc/print_exception</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>exc/print_exception</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>exception_str(exc=<i>$!</i>)</h3><ul><p>Ruby does not provide a method to print exceptions exactly the same way it
+does, so here's a hack to return a string representing an exception plus
+backtrace, in printable form.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>exc&nbsp;&nbsp;</th><td>the exception to print
+</td></tr>
+</table>
+<p><strong>Returns:</strong> a string representing the exception and its backtrace
+<p>
+</ul>
+
+<h3>print_exception(exc=<i>$!</i>, out=<i>$stdout</i>)</h3><ul><p>Print an exception, the same way Ruby does it.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>exc&nbsp;&nbsp;</th><td>the exception to print.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>out&nbsp;&nbsp;</th><td>the IO object to print to.
+</td></tr>
+</table>
+
+</ul>
+
+</body></html>

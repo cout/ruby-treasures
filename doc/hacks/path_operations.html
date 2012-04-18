@@ -1,0 +1,34 @@
+<html><head><title>hacks/path_operations</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/path_operations</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>realpath(file)</h3><ul><p>Determine the "real" name of a file.
+<p>On Win32 (and other platforms that don't support symlinks), this should
+return whatever was passed (similar to the "truename" command on DOS, but
+at the moment doesn't handle subst'd drives).
+<p>On Unix, this will break the filename into pieces and remove all symlinks
+from the filename.  It does not handle hard links.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>file&nbsp;&nbsp;</th><td>the filename to process.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the "real" name of the passed filename.
+<p>
+</ul>
+
+<h3>find_file_in_path(file, path=<i>$:</i>, extensions=<i>['', '.so', '.rb']</i>)</h3><ul><p>Given a filename, search for it in path.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>file&nbsp;&nbsp;</th><td>the name of the file to find
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>path&nbsp;&nbsp;</th><td>an array containing all the directories to search
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>extensions&nbsp;&nbsp;</th><td>an array containing extensions to search for
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the full pathname of the file, or just the parameter file if it
+was not found.
+<p>
+</ul>
+
+</body></html>

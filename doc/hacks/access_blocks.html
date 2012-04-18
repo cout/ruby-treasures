@@ -1,0 +1,38 @@
+<html><head><title>hacks/access_blocks</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/access_blocks</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Module &lt; Object</font></h2></td></tr></table><ul>A hack to allow specifying public/private/protected using a block.  Based on
+an idea proposed by David Alan Black.
+<p>E.g.:
+<pre>
+class Thing
+  private do
+    def hidden
+      puts 'hi'
+    end
+  end
+<p>  def visible
+    hidden
+  end
+end
+</pre>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Constants</font></h2></td></tr></table><table>
+<tr><th align="left">PUBLIC</th><td></td></tr>
+<tr><th align="left">PROTECTED</th><td></td></tr>
+<tr><th align="left">PRIVATE</th><td></td></tr>
+<tr><th align="left">SECRET</th><td></td></tr>
+</table>
+<p>
+
+
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>private(*args, &block)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="secret.html">secret</a></strong><br>
+
+</body></html>

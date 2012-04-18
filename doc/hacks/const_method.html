@@ -1,0 +1,53 @@
+<html><head><title>hacks/const_method</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/const_method</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>const_send(object, *args, &block)</h3><ul><p>Freeze an object, send it a message (without calling private or protected
+methods), and then unfreeze the object.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>object&nbsp;&nbsp;</th><td>the object to send the message to.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>args&nbsp;&nbsp;</th><td>the message to send.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>block&nbsp;&nbsp;</th><td>an optional code block to send.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the return value from the method call.
+<p>
+</ul>
+
+<h3>mutable_send(object, *args, &block)</h3><ul><p>The same as const_send, but temporarily unfreeze the object instead of
+temporarily freezing it.
+<p>THIS METHOD IS DANGEROUS.  If an object was frozen, it was frozen for
+a reason.  This method should not be called from user code.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>object&nbsp;&nbsp;</th><td>the object to send the message to.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>args&nbsp;&nbsp;</th><td>the message to send.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>block&nbsp;&nbsp;</th><td>an optional code block to send.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the return value from the method call.
+<p>
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Module &lt; Object</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>const_method(*methods)</h3><ul><p>Given a list of methods, mark them as const.  Const methods are called
+using const_send.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>methods&nbsp;&nbsp;</th><td>a list of methods to mark as const methods.
+</td></tr>
+</table>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="const_helpers.so.html">const_helpers.so</a></strong><br>
+
+</body></html>

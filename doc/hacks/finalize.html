@@ -1,0 +1,52 @@
+<html><head><title>hacks/finalize</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/finalize</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Constants</font></h2></td></tr></table><table>
+<tr><th align="left">WRAPPED_CLASSES</th><td></td></tr>
+</table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>enable_finalize(symbol)</h3><ul><p>Enable the "finalize" method for the given class.  Normally, when a
+finalizer is called, the object has already been garbage collected.  This
+will create a proxy object that keeps the object around so that the
+object's "finalize" method can be called; the object is then garbage
+collected.
+<p>The resulting proxy class will be frozen, since adding new methods to the
+proxy class would probably not have the desired effect.  The original
+class will have the name Class_Finalize_Wrapped, where Class is that name
+of the original class.
+<p>TODO: Because this class uses method_missing_delegate, constants may not
+be properly delegated.
+<p>Example:
+<pre>
+  class Foo
+    def initialize
+      puts "initialize"
+    end
+<p>    def finalize
+      puts "finalize"
+    end
+  end
+  enable_finalize(:Foo)
+<p>  def foo
+    f = Foo.new
+  end
+<p>  foo             #=> initialize
+  GC.start        #=&gt; finalize
+</pre>
+<p>
+
+</ul>
+
+<h3>initialize(*args, &block)</h3><ul><p>
+
+</ul>
+
+<h3>self.finalizer(id)</h3><ul><p>
+
+</ul>
+
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="call_stack.html">call_stack</a></strong><br>
+<strong><a href="method_missing_delegate.html">method_missing_delegate</a></strong><br>
+
+</body></html>

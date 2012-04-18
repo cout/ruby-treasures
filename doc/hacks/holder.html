@@ -1,0 +1,55 @@
+<html><head><title>hacks/holder</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/holder</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>Holder(klass)</h3><ul><p>Create a Holder class, to allow non-reference objects to be returned.
+In Scheme, this might be known as a "Box".
+<p>Example:
+<pre>
+  FixnumHolder = Holder(Fixnum)
+  def foo(inout)
+      inout.value = 42
+  end
+  a = FixnumHolder.new(10)
+  puts a                      #=> 10
+  foo(a)
+  puts a                      #=> 42
+  puts a + 5                  #=&gt; 47
+</pre>
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>klass&nbsp;&nbsp;</th><td>the type to generate a holder class for.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> a new class that can be used as a holder.
+<p>
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Holder &lt; Object</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(i)</h3><ul><p>
+
+</ul>
+
+<h3>value=<i>(other</i>)</h3><ul><p>
+
+</ul>
+
+<h3>value</h3><ul><p>
+
+</ul>
+
+<h3>to_s</h3><ul><p>
+
+</ul>
+
+<h3>=<i>=(other</i>)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="method_missing_delegate.html">method_missing_delegate</a></strong><br>
+
+</body></html>

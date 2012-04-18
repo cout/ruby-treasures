@@ -1,0 +1,27 @@
+<html><head><title>hacks/observable_method</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/observable_method</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module ObservableMethod</font></h2></td></tr></table><ul>A mixin that can be applied to Method and Proc objects (or any other
+object that responds to call()) to make them observable.  For example:
+<p><pre>
+  p = proc { puts 'foo!' }
+  p.extend(ObservableMethod)
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>update(*args, &block)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>method_observer(*args)</h3><ul><p>Create an observable method.  Works just like Object#method, but
+returns a Method object that has been extended with ObservableMethod.
+<p>
+
+</ul>
+
+<h2>Requires</h2>
+<strong><a href="observer.html">observer</a></strong><br>
+
+</body></html>

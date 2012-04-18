@@ -1,0 +1,100 @@
+<html><head><title>sync/rwlock</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>sync/rwlock</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class RWLock &lt; Object</font></h2></td></tr></table><ul>A read/write lock.
+<p>TODO: I'm not yet sure how to implement this correctly, or how to test it.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(readers =<i> -1</i>)</h3><ul><p>
+
+</ul>
+
+<h3>lock_read</h3><ul><p>
+
+</ul>
+
+<h3>lock_write</h3><ul><p>
+
+</ul>
+
+<h3>unlock_read</h3><ul><p>
+
+</ul>
+
+<h3>unlock_write</h3><ul><p>
+
+</ul>
+
+<h3>synchronize_read(*args)</h3><ul><p>
+
+</ul>
+
+<h3>synchronize_write(*args)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class ReadLock &lt; Object</font></h2></td></tr></table><ul>A wrapper around a read/write lock that has the same interface as a
+Mutex and performs only read locks
+<p>Example:
+<pre>
+  rwlock = RWLock.new
+  read_lock = ReadLock.new(rwlock)
+  read_lock.synchronize do
+    # ...
+  end
+</pre>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(obj)</h3><ul><p>
+
+</ul>
+
+<h3>lock</h3><ul><p>
+
+</ul>
+
+<h3>try_lock</h3><ul><p>
+
+</ul>
+
+<h3>unlock</h3><ul><p>
+
+</ul>
+
+<h3>synchronize(&block)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class WriteLock &lt; Object</font></h2></td></tr></table><ul>A wrapper around a read/write lock that has the same interface as a
+Mutex and performs only write locks
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(obj)</h3><ul><p>
+
+</ul>
+
+<h3>lock</h3><ul><p>
+
+</ul>
+
+<h3>try_lock</h3><ul><p>
+
+</ul>
+
+<h3>unlock</h3><ul><p>
+
+</ul>
+
+<h3>synchronize(&block)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="thread.html">thread</a></strong><br>
+<strong><a href="semaphore.html">semaphore</a></strong><br>
+<strong><a href="lock.html">lock</a></strong><br>
+
+</body></html>

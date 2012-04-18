@@ -1,0 +1,144 @@
+<html><head><title>reactor/reactor</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>reactor/reactor</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Reactor &lt; Object</font></h2></td></tr></table><ul>The Reactor is a base class for all other reactors.  It is currently an
+abstract class, but this may change.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class AlreadyRegistered &lt; RuntimeError</font></h2></td></tr></table><ul>
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class NotRegistered &lt; RuntimeError</font></h2></td></tr></table><ul>
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize()</h3><ul><p>
+
+</ul>
+
+<h3>register_read(io_object, callback)</h3><ul><p>Register callback whenever data is ready to be read on io_object.
+The implementation should throw AlreadyRegistered if there is already
+a callback registered for this io_object.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>io_object&nbsp;&nbsp;</th><td>the io object to register for.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>callback&nbsp;&nbsp;</th><td>a proc or method that gets called when data is ready.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>register_write(io_object, callback)</h3><ul><p>Register callback whenever data is ready to be written to io_object.
+The implementation should throw AlreadyRegistered if there is already
+a callback registered for this io_object.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>io_object&nbsp;&nbsp;</th><td>the io object to register for.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>callback&nbsp;&nbsp;</th><td>a proc or method that gets called when the io_object is
+ready to be written to.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>register_error(io_object, callback)</h3><ul><p>Register callback whenever an exceptional conditions occurs for io_object.
+The implementation should throw AlreadyRegistered if there is already
+a callback registered for this io_object.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>io_object&nbsp;&nbsp;</th><td>the io object to register for.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>callback&nbsp;&nbsp;</th><td>a proc or method that gets called when the io_object has
+an exceptional condition.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>unregister_read(io_object)</h3><ul><p>Unregister a read handler for an io_object.  The implementation should
+raise NotRegistered if there is no callback registered for this io_object.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>io_object&nbsp;&nbsp;</th><td>the io object to unregister.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>unregister_write(io_object)</h3><ul><p>Unregister a write handler for an io_object.  The implementation should
+raise NotRegistered if there is no callback registered for this io_object.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>io_object&nbsp;&nbsp;</th><td>the io object to unregister.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>unregister_error(io_object)</h3><ul><p>Unregister an error handler for an io_object.  The implementation should
+raise NotRegistered if there is no callback registered for this io_object.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>io_object&nbsp;&nbsp;</th><td>the io object to unregister.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>perform_work(t =<i> nil</i>)</h3><ul><p>Run the reactor event loop until work is done or until the timeout is
+reached.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>t&nbsp;&nbsp;</th><td>the maximum amount of time to run the event loop.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>run_event_loop(t =<i> nil</i>)</h3><ul><p>Run the reactor event loop for t seconds (or indefinitely if t is nil).
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>t&nbsp;&nbsp;</th><td>the length of time to run the event loop.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>end_event_loop()</h3><ul><p>End the reactor event loop.
+<p>
+
+</ul>
+
+<h3>work_pending(t =<i> 0</i>)</h3><ul><p>Determine if there the reactor has work to be done.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>t&nbsp;&nbsp;</th><td>te length of time to wait until there is work to be done
+(do not block by default; set this to nil to block).
+</td></tr>
+</table>
+<p><strong>Returns:</strong> true if there is work pending, or false otherwise.
+<p>
+</ul>
+
+<h3>schedule_timer(callback, delta, interval=<i>0</i>)</h3><ul><p>Schedule a timer event.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>callback&nbsp;&nbsp;</th><td>a proc or method to be called whenever the timer goes off.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>delta&nbsp;&nbsp;</th><td>the amount of time to wait before the first timer goes off.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>interval&nbsp;&nbsp;</th><td>the amount of time to wait between intervals.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the id of a timer event.
+<p>
+</ul>
+
+<h3>cancel_timer(timerid)</h3><ul><p>Unregister a timer event.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>timerid&nbsp;&nbsp;</th><td>the id of the timer event to unregister.
+</td></tr>
+</table>
+
+</ul>
+
+</body></html>

@@ -1,0 +1,80 @@
+<html><head><title>hacks/inline</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/inline</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module Inline</font></h2></td></tr></table><ul>A hack for allowing inline C code inside a Ruby program.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Constants</font></h2></td></tr></table><table>
+<tr><th align="left">CONFIG</th><td></td></tr>
+<tr><th align="left">CFLAGS</th><td></td></tr>
+<tr><th align="left">LDFLAGS</th><td></td></tr>
+<tr><th align="left">CC</th><td></td></tr>
+</table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>self.check_dependency(target, dependency, &block)</h3><ul><p>A helper function for checking dependencies.  Calls the block if
+the target is out of date.
+<p>
+
+</ul>
+
+<h3>self.inline(lang, source, level =<i> 0</i>)</h3><ul><p>Put inline code in another language inside a Ruby script.
+<p><p>TODO: For now, you must have an Init_filename function in your C code,
+where filename is the name of your Ruby script (minus the .rb extension).
+This function could be automatically generated in the future.
+<p>TODO: Currently, this just checks dates to see if the Ruby file has been
+modified, and if so, it recompiles.  Ideally, MD5 or some other
+mechanism should be used to see if the inline source has changed, so that
+the Ruby script can be modified without recompiling (I'm told that this
+is what the Perl inline module does).
+<p>TODO: CFLAGS and LDFLAGS should be configurable.
+<p>E.g.:
+<pre>
+  Inline.inline "C", &lt;&lt;END
+  #include &lt;stdio.h&gt;
+<p>  void Init_inline_helper() {
+    printf("hello, world!\n");
+  }
+<p>  END
+<p>  Inline::require
+</pre>
+<p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>lang&nbsp;&nbsp;</th><td>The language of the source (currently must be "C")
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>source&nbsp;&nbsp;</th><td>The source to inline
+</td></tr>
+</table>
+
+</ul>
+
+<h3>self.build(lang=<i>"C"</i>, level =<i> 0</i>)</h3><ul><p>Explicitly build the _helper.so file from the source.  You do not
+normally need to call this method.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>lang&nbsp;&nbsp;</th><td>the language of the source
+</td></tr>
+</table>
+
+</ul>
+
+<h3>self.require</h3><ul><p>Automatically require the _helper.so file.
+<p>
+
+</ul>
+
+<h3>self.clean(lang=<i>"C"</i>)</h3><ul><p>Clean the _helper.c and _helper.so files
+<p>
+
+</ul>
+
+<h3>self.strip_extension(filename)</h3><ul><p>For internal use only.
+<p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="pstore.html">pstore</a></strong><br>
+<strong><a href="rbconfig.html">rbconfig</a></strong><br>
+<strong><a href="caller_helpers.html">caller_helpers</a></strong><br>
+
+</body></html>

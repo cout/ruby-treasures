@@ -1,0 +1,65 @@
+<html><head><title>exc/exception_annotation</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>exc/exception_annotation</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module ExceptionAnnotator</font></h2></td></tr></table><ul>A tool to annotate exceptions in Ruby.  This is (loosely) based on a
+C++ library discussed by Andrei Alexandrescu at the 2002 ACCU
+conference.
+<p>E.g.:
+<pre>
+  begin
+    ExceptionAnnotator::operation("cleaning up...") do
+      ExceptionAnnotator::operation("writing logs...") do
+        ExceptionAnnotator::operation("opening log file...") do
+          raise "Unknown Error"
+        end
+      end
+    end
+  rescue Exception =&gt; exc
+    puts ExceptionAnnotator::annotated_mesg(exc)
+  end
+</pre>
+<p>Will print:
+<p><pre>
+  Unknown Error
+    while opening log file...
+    while writing logs...
+    while cleaning up...
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module ExceptionAnnotation</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>annotations</h3><ul><p>
+
+</ul>
+
+<h3>annotations=</h3><ul><p>
+
+</ul>
+
+<h3>annotated_mesg()</h3><ul><p>
+
+</ul>
+
+<h3>annotate(msg)</h3><ul><p>
+
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Mixins</font></h2></td></tr></table><table>
+<tr><th align="left">ExceptionExtension</th><td></td></tr>
+</table>
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>self.operation(op, &block)</h3><ul><p>
+
+</ul>
+
+<h3>self.annotated_mesg(exc, default_annotation=<i>"** No annotation **"</i>)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="exception_extensions.html">exception_extensions</a></strong><br>
+
+</body></html>

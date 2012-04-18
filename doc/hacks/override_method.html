@@ -1,0 +1,46 @@
+<html><head><title>hacks/override_method</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/override_method</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Module &lt; Object</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>override_method(*symbols, &block)</h3><ul><p>A clean way to override methods without resorting to alias_method.  The
+original method can be called with super().
+<p>This works by giving the current class two anonymous base classes: one
+containing the original method, and one containing the new method.  Thus,
+the original method must NOT make a call to super().
+<p><p><pre>
+  class Foo
+    def foo
+      puts "foo!"
+    end
+<p>    override_method :foo do
+      def foo
+        puts "foo 2!"
+        super()
+      end
+    end
+<p>    override_method :foo do
+      def foo
+        puts "foo 3!"
+        super()
+      end
+    end
+  end
+<p>  Foo.new.foo #=> foo 3!
+              #=> foo 2!
+              #=&gt; foo 1!
+</pre>
+<p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>symbols&nbsp;&nbsp;</th><td>a list of symbols to override
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>block&nbsp;&nbsp;</th><td>a block which defines the new methods.
+</td></tr>
+</table>
+
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Mixins</font></h2></td></tr></table><table>
+<tr><th align="left">new_methods</th><td></td></tr>
+</table>
+</ul>
+</body></html>

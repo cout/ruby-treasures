@@ -1,0 +1,31 @@
+<html><head><title>hacks/super_method</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/super_method</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Object &lt; Object</font></h2></td></tr></table><ul>A hack to be able to call methods in any superclass, not just the immediate
+superclass.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Private Methods</font></h2></td></tr></table>
+
+<h3>super_method(klass, method_name)</h3><ul><p>Return a method object from parent class (or module)
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>klass&nbsp;&nbsp;</th><td>the superclass the method is in
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>method_name&nbsp;&nbsp;</th><td>the name of the method to get a Method object for
+</td></tr>
+</table>
+<p><strong>Returns:</strong> a Method object, bound to self
+<p>
+</ul>
+
+<h3>super_call(klass, method_name, *args, &block)</h3><ul><p>Call a method in a parent class.  Equivalent to:
+<pre>
+  super_method(klass, method_name).call(*args, &block)
+</pre>
+<p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="super_method.so.html">super_method.so</a></strong><br>
+
+</body></html>

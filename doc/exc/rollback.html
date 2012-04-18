@@ -1,0 +1,47 @@
+<html><head><title>exc/rollback</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>exc/rollback</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Rollback &lt; Object</font></h2></td></tr></table><ul>A helper class for rolling back changes made when an exception occurs.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>debug</h3><ul><p>
+
+</ul>
+
+<h3>debug=</h3><ul><p>
+
+</ul>
+
+<h3>initialize(a=<i>Array.new</i>)</h3><ul><p>Create a new Rollback object.  You should generally not have to do this
+directly; use Rollback::rollback() instead.
+<p>
+
+</ul>
+
+<h3>undo(x)</h3><ul><p>Specify that the passed proc or method should be called when an exception
+occurs.  All undo actions will be called in the reverse order in which
+they were created.
+<p>
+
+</ul>
+
+<h3>self.rollback(*args, &block)</h3><ul><p>Run the passed block, and call the given undo() actions in reverse order
+if an exception occurs.  The exception will be properly propogated to the
+caller.
+<p>E.g.:
+<pre>
+  Rollback::rollback do |rb, *args|
+    rb.undo(Proc.new { puts "1" })
+    rb.undo(Proc.new { puts "2" })
+    rb.undo(Proc.new { puts "3" })
+    raise RuntimeError
+  end
+</pre>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="print_exception.html">print_exception</a></strong><br>
+
+</body></html>

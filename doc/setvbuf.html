@@ -1,0 +1,31 @@
+<html><head><title>setvbuf</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>setvbuf</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class IO &lt; Object</font></h2></td></tr></table><ul>A Ruby interface to setvbuf(3)
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>setvbuf(mode, buf)</h3><ul><p>Call setvbuf(3) with the given mode and buffer (size is calculated
+from the length of the buffer).
+<p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>mode&nbsp;&nbsp;</th><td>one of IO::NBF (non-buffered), IO::FBF (fully-buffered),
+            or IO::LBF (line-buffered).  IO::LBF is the default for
+            $stdin/$stdout/$stderr when connected to a tty.  On most
+            systens, IO::FBF is the default for
+            $stdin/$stdout/$stderr when not connected to a tty, but
+            this is system-dependant.  IO::FBF with a zero-length
+            buffer is the default for all files.  The default for
+            all other IO objects is unspecified.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>buf&nbsp;&nbsp;</th><td>The buffer to give to setvbuf.  It may be a) a String
+            object whose length is the length of the buffer, or b)
+            nil, to indicate a zero-length buffer.
+</td></tr>
+</table>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="setvbuf_helper.html">setvbuf_helper</a></strong><br>
+
+</body></html>

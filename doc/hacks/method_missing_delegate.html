@@ -1,0 +1,52 @@
+<html><head><title>hacks/method_missing_delegate</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/method_missing_delegate</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class SimpleMethodMissingDelegate &lt; Object</font></h2></td></tr></table><ul>A class similar to SimpleDelegate, but which uses method_missing.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(obj)</h3><ul><p>
+
+</ul>
+
+<h3>method_missing(*args, &block)</h3><ul><p>
+
+</ul>
+
+<h3>__getobj__()</h3><ul><p>
+
+</ul>
+
+<h3>__setobj__(obj)</h3><ul><p>
+
+</ul>
+
+<h3>to_s()</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>MethodMissingDelegateClass(klass)</h3><ul><p>Create a delegate class that uses method_missing to do its dirty work.  Works
+exactly the same as DelegateClass, but also allows the delegated object to
+change at run-time (in a type-safe manner).
+<p>TODO: If a class has one name, then is aliased to another name, and the
+original name is changed to point to a different class, then this will not
+work.
+<p>TODO: Constants are not delegated properly.
+<p>
+
+</ul>
+
+<h3>self.method_missing(*args, &block)</h3><ul><p>
+
+</ul>
+
+<h3>__setobj__(obj)</h3><ul><p>
+
+</ul>
+
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="safe_send.html">safe_send</a></strong><br>
+
+</body></html>

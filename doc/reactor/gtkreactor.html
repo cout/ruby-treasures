@@ -1,0 +1,69 @@
+<html><head><title>reactor/gtkreactor</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>reactor/gtkreactor</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class GtkReactor &lt; Reactor</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Constants</font></h2></td></tr></table><table>
+<tr><th align="left">GDK_INPUT_READ</th><td></td></tr>
+<tr><th align="left">GDK_INPUT_WRITE</th><td></td></tr>
+<tr><th align="left">GDK_INPUT_EXCEPTION</th><td></td></tr>
+</table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class AlreadyRegistered &lt; RuntimeError</font></h2></td></tr></table><ul>
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class NotRegistered &lt; RuntimeError</font></h2></td></tr></table><ul>
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize()</h3><ul><p>
+
+</ul>
+
+<h3>register_read(io_object, callback)</h3><ul><p>
+
+</ul>
+
+<h3>register_write(io_object, callback)</h3><ul><p>
+
+</ul>
+
+<h3>register_error(io_object, callback)</h3><ul><p>
+
+</ul>
+
+<h3>unregister_read(io_object)</h3><ul><p>
+
+</ul>
+
+<h3>unregister_write(io_object)</h3><ul><p>
+
+</ul>
+
+<h3>unregister_error(io_object)</h3><ul><p>
+
+</ul>
+
+<h3>run_event_loop(t =<i> nil</i>)</h3><ul><p>
+
+</ul>
+
+<h3>end_event_loop()</h3><ul><p>
+
+</ul>
+
+<h3>work_pending()</h3><ul><p>
+
+</ul>
+
+<h3>schedule_timer(callback, delta, interval=<i>0</i>)</h3><ul><p>
+
+</ul>
+
+<h3>cancel_timer(timerid)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="gtk.html">gtk</a></strong><br>
+<strong><a href="thread.html">thread</a></strong><br>
+<strong><a href="reactor.html">reactor</a></strong><br>
+
+</body></html>

@@ -1,0 +1,55 @@
+<html><head><title>hacks/safe_mixin</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/safe_mixin</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Module &lt; Object</font></h2></td></tr></table><ul>A hack that allows mixins to only be mixed in to classes that have the
+specified methods defined.  Note that this requires that the 'include' appear
+at the end of the class definition (after all the methods have been defined).
+<p>Example:
+<pre>
+  module Foo
+    mixin_requires :foo, :bar
+<p>    def xyz
+      # If foo and bar are not defined in the derived class, then this will
+      # raise an exception, so it's best to know that this won't work at
+      # load-time.
+      foo
+      bar
+    end
+  end
+<p>  class Bar
+    def foo
+      puts "foo"
+    end
+<p>    def bar
+      puts "bar"
+    end
+<p>    # This must come last, because foo and bar must be defined before
+    # including Foo.  If they are not defined, then an exception will be
+    # thrown.
+    include Foo
+  end
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>mixin_requires(*args)</h3><ul><p>Require that the class/module that a mixin is being included in MUST define
+certain methods.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>args&nbsp;&nbsp;</th><td>A list of Symbols and Integers.  When a Sybmbol, indicates
+the given method must be defined.  When an Integer, indicates the desired
+arity of the method indicated by the previous Symbol.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>arity_matches(actual_arity, desired_arity)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="alias_class_method.html">alias_class_method</a></strong><br>
+<strong><a href="object_identifier.html">object_identifier</a></strong><br>
+
+</body></html>

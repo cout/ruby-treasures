@@ -1,0 +1,29 @@
+- Testing:
+    a) More tests ALWAYS need to be written.
+    b) ALL tests should be automated, so "make test" can accurately test
+       everything at once.
+
+- Code review:
+    a) The extconf.rb scripts and the Makefiles are not very pretty, and since
+       I have little experience with them, I'm not sure if I'm doing them right.
+    b) Many of the methods are NOT exception-safe.  It should all be reviewed
+       for correctness.
+    c) Some of the code may need to be reviewed for correct return values.
+    d) I don't think some of the sync stuff is correct, and I'm not sure how
+       to test it.
+
+- Particular documentation changes that need to be made:
+    a) some classes are not documented.
+    b) still many TODO's
+    c) somtimes the term 'function' is used instead of 'method'
+    d) what is the correct way to describe a the return value from an
+       iterator, such as each()?
+    e) documentation for interfaces that are common between classes
+
+- Add to safe_mixin the ability to make sure a given module has already been
+  mixed in; the reason for this is that if Enumerable is mixed in *after*
+  PairEnumerableContainer, then include? will not work properly.
+
+- I'm not sure if any of this will work under Windows.  Anyone want to make a
+  port?
+

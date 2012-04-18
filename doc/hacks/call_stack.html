@@ -1,0 +1,101 @@
+<html><head><title>hacks/call_stack</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/call_stack</font></h1></td></tr></table>
+<p>This is a hack for accessing the call stack.  It uses set_trace_func, so
+using this hack may degrade performance.  The result will be a global
+variable $call_stack, which is an array containing information about the
+caller.  Each element of the array is itself an array containing the same
+information as would be returned by set_trace_func.  The current call
+information is stored in $current_call.
+<p>TODO: I need some good tests for this.
+<p>Eg.:
+<pre>
+  def foo; eval("x = 42", $call_stack[1][4]); end
+  def bar; foo; end
+  x = nil
+  bar
+  puts x
+</pre>
+<p>
+
+
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class CallStack &lt; Object</font></h2></td></tr></table><ul>The type of $call_stack is a CallStack.  It is a singleton class, and
+cannot be instantiated.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>[](index)</h3><ul><p>Find $current_call for index+1 levels above the current one.
+<p><p>
+<p><strong>Returns:</strong> the requested value.
+<p>
+</ul>
+
+<h3>to_a()</h3><ul><p>Return a copy of the call stack as an array.
+<p>The current call stack as an array.
+<p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>caller_file(level =<i> 0</i>)</h3><ul><p>Return the file of the caller
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>level&nbsp;&nbsp;</th><td>the level of the caller you want to query
+</td></tr>
+</table>
+
+</ul>
+
+<h3>caller_lineno(level =<i> 0</i>)</h3><ul><p>Return the line of the caller
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>level&nbsp;&nbsp;</th><td>the level of the caller you want to query
+</td></tr>
+</table>
+
+</ul>
+
+<h3>caller_func(level =<i> 0</i>)</h3><ul><p>Return the function the caller was in
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>level&nbsp;&nbsp;</th><td>the level of the caller you want to query
+</td></tr>
+</table>
+
+</ul>
+
+<h3>caller_binding(level =<i> 0</i>)</h3><ul><p>Return the caller's binding
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>level&nbsp;&nbsp;</th><td>the level of the caller who's binding you want
+</td></tr>
+</table>
+
+</ul>
+
+<h3>caller_class(level =<i> 0</i>)</h3><ul><p>Return the class of the caller
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>level&nbsp;&nbsp;</th><td>the level of the caller who's class you want
+</td></tr>
+</table>
+
+</ul>
+
+<h3>caller_self(level =<i> 0</i>)</h3><ul><p>Return the object ("self") of the caller
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>level&nbsp;&nbsp;</th><td>the level of the caller who's "self" you want
+</td></tr>
+</table>
+
+</ul>
+
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="fix_trace_func.html">fix_trace_func</a></strong><br>
+<strong><a href="rbconfig.html">rbconfig</a></strong><br>
+<strong><a href="call_stack.so.html">call_stack.so</a></strong><br>
+
+</body></html>

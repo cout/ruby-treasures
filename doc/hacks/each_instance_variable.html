@@ -1,0 +1,21 @@
+<html><head><title>hacks/each_instance_variable</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/each_instance_variable</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Object &lt; Object</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Private Methods</font></h2></td></tr></table>
+
+<h3>each_instance_variable</h3><ul><p>Iterate over every instance variable in the given object, yielding
+[ name, obj ], where name is the Symbol representing the name of
+the instance variable, and obj is the instance variable itself.
+<p>This is useful for operations such as deep freeze and deep copy.
+It can also come in handy for writing custom marshallers.  A less
+common use would be to access instance variables whose name do not
+begin with the @ character (such as the Exception class's mesg
+variable).
+<p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="each_instance_variable.so.html">each_instance_variable.so</a></strong><br>
+
+</body></html>

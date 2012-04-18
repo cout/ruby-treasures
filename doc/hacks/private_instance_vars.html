@@ -1,0 +1,89 @@
+<html><head><title>hacks/private_instance_vars</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/private_instance_vars</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Object &lt; Object</font></h2></td></tr></table><ul>A hack to allow easy access to private instance variables.
+<p>TODO: I'm not 100% convinced that this works as it should.
+<p>TODO: Private instance variables do not get properly marshalled at the moment.
+<p>TODO: In order for cleanup to properly occur, all classes that use
+private instance variables MUST call super() from their initialize method.
+<p>Example:
+<pre>
+  class Foo
+    private_instance_var :foo
+<p>    def initialize
+      super()
+      set_piv :foo, 42
+    end
+<p>    def bar
+      get_piv :foo
+    end
+  end
+<p>  f = Foo.new
+  p f.bar         #=&gt; 42
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Constants</font></h2></td></tr></table><table>
+<tr><th align="left">INSTANCE_VARS</th><td></td></tr>
+</table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module InstanceVarCleanup</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(*args, &block)</h3><ul><p>
+
+</ul>
+
+<h3>self.cleanup(klass, id)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>self.private_instance_var(symbol)</h3><ul><p>Define a new private instance variable in the current class.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>symbol&nbsp;&nbsp;</th><td>the name of the instance variable
+</td></tr>
+</table>
+
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Mixins</font></h2></td></tr></table><table>
+<tr><th align="left">InstanceVarCleanup</th><td></td></tr>
+</table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>get_private_instance_var(symbol)</h3><ul><p>Return the private instance variable associated with symbol.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>symbol&nbsp;&nbsp;</th><td>the name of the private instance variable to return
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the private instance variable
+<p>
+</ul>
+
+<h3>set_private_instance_var(symbol, value)</h3><ul><p>Set the private instance variable associated with symbol.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>symbol&nbsp;&nbsp;</th><td>the name of the private instance variable to return
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>value&nbsp;&nbsp;</th><td>the new value
+</td></tr>
+</table>
+<p><strong>Returns:</strong> value
+<p>
+</ul>
+
+<h3>get_piv</h3><ul><p>get_piv is an alias for get_private_instance_var.
+
+</ul>
+
+<h3>set_piv</h3><ul><p>set_piv is an alias for set_private_instance_var.
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="call_stack.html">call_stack</a></strong><br>
+
+</body></html>

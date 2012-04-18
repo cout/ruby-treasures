@@ -1,0 +1,41 @@
+Ruby Treasures 0.4
+Copyright (C) 2002 Paul Brannan <paul@atdesk.com>
+
+Ruby Treasures is a pet project of mine that I think contains a lot of nifty
+add-ons for Ruby.  Some of these may be more useful than others; that's for
+you to decide.
+
+The project has just a few goals:
+    - To implement common utility classes that are missing from the Ruby
+      standard library.
+    - Miscellaneous useful classes for writing Ruby applications.
+    - Interesting hacks and tweaks to the interpreter and/or library that
+      may or may not be of use to people.
+
+The primary goal, however, is for me to have fun writing the library and to
+learn something about Ruby in the process.
+
+You can view the license in the file LICENSE.
+
+You can compile it with:
+    ruby extconf.rb
+    make
+
+Optionally, you can run the tests with:
+    make test
+
+Lastly, you can install it with:
+    make install
+
+The directory structure is as follows:
+    ext/                C extensions go here
+    lib/                The top level lib. directory
+    lib/exc             Classes to work with exceptions
+    lib/hacks           Interesting hacks
+    lib/reactor         A reactor mechanism for multiplexed I/O
+    lib/sync            Various thread synchronization routines
+    test/               All tests for the library
+    doc/                Documentation
+    test/               Unit tests
+    examples/           Example source
+

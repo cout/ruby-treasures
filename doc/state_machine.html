@@ -1,0 +1,85 @@
+<html><head><title>state_machine</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>state_machine</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class StateMachine &lt; Object</font></h2></td></tr></table><ul>A simple state machine.
+<p><pre>
+  sm = State_Machine.new(
+      {
+        :ALPHA => {
+          :A => :ALPHA,
+          :B => :BETA
+        },
+        :BETA => {
+          :A =&gt; :ALPHA
+        }
+      },
+      :ALPHA
+  )
+<p>  sm.change_state(:A)
+  sm.change_state(:B)
+</pre>
+<p>Note that you are not limited to using symbols as your states and inputs;
+you may use any object type you wish (RubyCollections Enums work well).
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class InvalidInput &lt; Exception</font></h2></td></tr></table><ul>
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>state</h3><ul><p>
+
+</ul>
+
+<h3>initialize(states, initial_state)</h3><ul><p>Create a new state machine.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>states&nbsp;&nbsp;</th><td>a hash: { current_state => { input =&gt; new_state } }
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>initial&nbsp;&nbsp;</th><td>state the initial state
+</td></tr>
+</table>
+
+</ul>
+
+<h3>change_state(input)</h3><ul><p>Change state to whichever state is associated with the given input.
+<p>
+
+</ul>
+
+<h3>draw(orientation, file, *args)</h3><ul><p>Write a picture of the state machine to a file, using GraphR.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>orientation&nbsp;&nbsp;</th><td>a string, 'portrait' or 'landscape'.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>file&nbsp;&nbsp;</th><td>the name of the file to write to.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>args&nbsp;&nbsp;</th><td>any additional arguments you wish to pass to write_to_file.
+</td></tr>
+</table>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class RecordKeepingStateMachine &lt; StateMachine</font></h2></td></tr></table><ul>A special type of state machine that keeps a history of all inputs and
+states.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>state_history</h3><ul><p>
+
+</ul>
+
+<h3>input_history</h3><ul><p>
+
+</ul>
+
+<h3>initialize(states, initial_state)</h3><ul><p>
+
+</ul>
+
+<h3>change_state(input)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="graph/graphviz_dot.html">graph/graphviz_dot</a></strong><br>
+
+</body></html>

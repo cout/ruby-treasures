@@ -1,0 +1,49 @@
+<html><head><title>exc/exception_extensions</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>exc/exception_extensions</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module ExceptionExtension</font></h2></td></tr></table><ul>A mixin used by other mixins to extend exceptions
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>exception(mesg=<i>nil</i>)</h3><ul><p>When Ruby code calls raise(), the interpreter calls the exception() method
+on the object passed to raise.  If that object is a Class, then
+exception() will return a new instance of an exception object; if that
+object is an Object and not a Class, then exception() will generally
+return self.
+<p>
+
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Private Methods</font></h2></td></tr></table>
+
+<h3>message=<i>(mesg</i>)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module ExceptionData</font></h2></td></tr></table><ul>A mixin to add arbitrary user data to an exception
+<p>Example:
+<pre>
+  begin
+    raise "Foo!"
+  rescue RuntimeError
+    p $!.message
+    $!.extend(ExceptionData)
+    $!.data = 42
+    raise $!, $!.message, $!.backtrace
+  end
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>data</h3><ul><p>
+
+</ul>
+
+<h3>data=</h3><ul><p>
+
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Mixins</font></h2></td></tr></table><table>
+<tr><th align="left">ExceptionExtension</th><td></td></tr>
+</table>
+</ul>
+</body></html>

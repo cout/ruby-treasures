@@ -1,0 +1,46 @@
+<html><head><title>hacks/automatic_object</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/automatic_object</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module AutomaticObject</font></h2></td></tr></table><ul>Include this module in a class to force all instances of that class
+to be temporary objects that will be destructed when they go out of
+scope.
+<p>The class's initialize and finalize instance methods will be called
+when the object is created and when it goes out of scope, respectively.
+Including this module will make the class's "new" method private, and
+will add a new class method called "create" that can be used to create
+instances of the object.  A call to create will yield a weak reference
+to the object.
+<p>Note that the object itself may not actually be destroyed until the
+garbage collector is invoked.  The user can keep a reference to the
+object after the block exits by calling __getobj__ on the reference
+from inside the block and returning it, but this is not a recommended
+practice, since the object will be in a half-dead state.
+<p>Example:
+<pre>
+  class Foo
+    include AutomaticObject
+    def initialize; puts "initialize"; end
+    def finalize; puts "finalize"; end
+  end
+<p>  Foo.create do |f|       #=> initialize
+    # ...
+  end                     #=&gt; finalize
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>self.extend_object(obj)</h3><ul><p>
+
+</ul>
+
+<h3>self.append_features(mod)</h3><ul><p>
+
+</ul>
+
+<h3>self.create(*args, &block)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="weakref.html">weakref</a></strong><br>
+
+</body></html>

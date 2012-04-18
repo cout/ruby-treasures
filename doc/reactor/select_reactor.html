@@ -1,0 +1,61 @@
+<html><head><title>reactor/select_reactor</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>reactor/select_reactor</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class SelectReactor &lt; Reactor</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(mutex=<i>nil</i>)</h3><ul><p>
+
+</ul>
+
+<h3>register_read(io_object, callback)</h3><ul><p>
+
+</ul>
+
+<h3>register_write(io_object, callback)</h3><ul><p>
+
+</ul>
+
+<h3>register_error(io_object, callback)</h3><ul><p>
+
+</ul>
+
+<h3>unregister_read(io_object)</h3><ul><p>
+
+</ul>
+
+<h3>unregister_write(io_object)</h3><ul><p>
+
+</ul>
+
+<h3>unregister_error(io_object)</h3><ul><p>
+
+</ul>
+
+<h3>run_event_loop(t =<i> nil</i>)</h3><ul><p>
+
+</ul>
+
+<h3>end_event_loop()</h3><ul><p>
+
+</ul>
+
+<h3>work_pending(t =<i> 0</i>)</h3><ul><p>
+
+</ul>
+
+<h3>schedule_timer(callback, delta, interval=<i>0</i>)</h3><ul><p>
+
+</ul>
+
+<h3>cancel_timer(timerid)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="thread.html">thread</a></strong><br>
+<strong><a href="../sync/null_mutex.html">../sync/null_mutex</a></strong><br>
+<strong><a href="reactor.html">reactor</a></strong><br>
+<strong><a href="timer_queue.html">timer_queue</a></strong><br>
+
+</body></html>

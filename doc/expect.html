@@ -1,0 +1,127 @@
+<html><head><title>expect</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>expect</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Expect &lt; Object</font></h2></td></tr></table><ul>Given an IO object, read data from that object and expect certain data.
+<p>All expected data is expected in 'chains'.  When a message is received, it
+is compared to the pattern at the top of each chain.  If it matches one of
+the patterns, then all is well, but an error message is printed otherwise.
+<p>A message can match patterns in more than one chain.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class UnmatchedMessage &lt; Exception</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>msg</h3><ul><p>
+
+</ul>
+
+<h3>initialize(msg)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Timeout &lt; Exception</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>chain</h3><ul><p>
+
+</ul>
+
+<h3>pattern</h3><ul><p>
+
+</ul>
+
+<h3>initialize(chain, pattern)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class SeparatedPattern &lt; Object</font></h2></td></tr></table><ul>A special type of pattern that matches a list of patterns, separated
+by a given separator, in any order.
+<p>Example:
+<pre>
+  # matches 'foo,bar' and 'bar,foo'
+  p = SeparatorPattern.new(['foo', 'bar'])
+<p>  e = Expect.new(nil, nil)
+  e.expect(p)
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>separator</h3><ul><p>
+
+</ul>
+
+<h3>separator=</h3><ul><p>
+
+</ul>
+
+<h3>initialize(message, separator =<i> ','</i>)</h3><ul><p>
+
+</ul>
+
+<h3>=<i>==(line</i>)</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class DefaultChain &lt; Object</font></h2></td></tr></table><ul>
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>timeout</h3><ul><p>It is highly recommended that this be an immutable object.
+<p>
+
+</ul>
+
+<h3>timeout=</h3><ul><p>
+
+</ul>
+
+<h3>initialize(io_object, reactor)</h3><ul><p>Create a new Expect_Test object.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>io_object&nbsp;&nbsp;</th><td>an IO object to read from.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>reactor&nbsp;&nbsp;</th><td>a reactor to use
+</td></tr>
+</table>
+
+</ul>
+
+<h3>reset()</h3><ul><p>Reset the the ignore chain and all expect chains.
+<p>
+
+</ul>
+
+<h3>expect(pattern, chain=<i>DefaultChain</i>)</h3><ul><p>Expect a message matching pattern in a certain chain.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>pattern&nbsp;&nbsp;</th><td>the pattern to expect.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>chain&nbsp;&nbsp;</th><td>the chain in which to expect the message.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>ignore(pattern)</h3><ul><p>Ignore a pattern in all chains.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>pattern&nbsp;&nbsp;</th><td>the pattern to ignore.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>run</h3><ul><p>
+
+</ul>
+
+<h3>handle_event(io_object)</h3><ul><p>
+
+</ul>
+
+<h3>handle_line(line)</h3><ul><p>
+
+</ul>
+
+</ul>
+</body></html>

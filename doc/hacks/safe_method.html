@@ -1,0 +1,39 @@
+<html><head><title>hacks/safe_method</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/safe_method</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class SafeMethod &lt; Object</font></h2></td></tr></table><ul>A SafeMethod is like a Method, but does checking to make sure it is not
+called on an inappropriate (private/protected) method.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(obj, method)</h3><ul><p>
+
+</ul>
+
+<h3>call(*args, &block)</h3><ul><p>
+
+</ul>
+
+<h3>[]</h3><ul><p>[] is an alias for call.
+
+</ul>
+
+<h3>to_proc</h3><ul><p>
+
+</ul>
+
+<h3>arity</h3><ul><p>
+
+</ul>
+
+</ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>safe_method(obj, method)</h3><ul><p>Return a new SafeMethod for the given object and method.
+<p>
+
+</ul>
+
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="safe_send.html">safe_send</a></strong><br>
+
+</body></html>

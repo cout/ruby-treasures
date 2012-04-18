@@ -1,0 +1,1247 @@
+2002-04-13  Paul Brannan  <cout@rm-f.net>
+
+    * lib/open3x.rb, lib/open3y.rb, test/test_super_method.rb:
+    Initial add.
+
+    * publish.rb: Remove ChangeLog.orig.
+
+    * publish.rb:
+    Got the ChangeLog filenames wrong; fixed.
+
+    * publish.rb:
+    Beautify the ChangeLog after it is generated.
+
+    * publish.rb: Fixed tabs in rcs2log command-line.
+
+    * publish.rb: Fixed quoting error.
+
+    * publish.rb: Added comments.
+    Look for rcs2log in places other than /usr/share/cvs/contrib.
+
+    * ext/spawn/spawn.c: Fixed version check.
+
+    * ext/hacks/const_helpers.c, ext/hacks/default_struct_method.h, ext/hacks/super_method.c, lib/hacks/const_method.rb, lib/hacks/const_var.rb, lib/hacks/super_method.rb, test/Makefile:
+    Added tests and documentation for super_method and super_call.
+    Fixed (sort of) dependency on ruby_safe_send.
+
+2002-04-12  Paul Brannan  <cout@rm-f.net>
+
+    * ext/hacks/extconf.rb, ext/hacks/super_method.c:
+    Added super_method.c.
+
+2002-04-11  Paul Brannan  <cout@rm-f.net>
+
+    * publish.rb:
+    Will now create a ChangeLog from the CVS logs.
+
+    * TODO: Updated.
+
+    * lib/hacks/deep_copy.rb, lib/exc/exception_annotation.rb:
+    Initial add.
+
+    * README: Updated.
+
+    * lib/exc/exception_extensions.rb, lib/exc/print_exception.rb, lib/exc/rollback.rb, lib/hacks/deep_freeze.rb, lib/hacks/exception_extensions.rb, lib/hacks/print_exception.rb, lib/rollback.rb, test/test_exception_extensions.rb, test/test_rollback.rb:
+    Created exc directory to hold source files that work with exceptions.
+
+    * test/test_safe_mixin.rb: Got rid of some warnings.
+
+    * lib/hacks/object_identifier.rb: Initial add.
+
+    * lib/hacks/safe_mixin.rb, test/test_safe_mixin.rb:
+    Cleaned up code and added the ability to check for correct method arity.
+
+    * lib/hacks/deep_freeze.rb: Updated documentation.
+
+    * TODO: Updated.
+
+2002-04-10  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/deep_freeze.rb, test/test_deep_freeze.rb:
+    Fixed exception handling.
+
+    * lib/sync/lock.rb: Fixed Lock.atomic.
+
+    * lib/rollback.rb: Added a debug feature.
+
+    * lib/hacks/deep_freeze.rb, test/test_deep_freeze.rb:
+    Added deep_freeze.
+
+    * TODO: Updated.
+
+    * ext/spawn/spawn.c: Fixed to work on Ruby 1.6.
+
+    * lib/hacks/each_instance_variable.rb: Initial add.
+
+    * test/Makefile, test/ds_test_helpers.rb, test/test_each_instance_variable.rb:
+    Finished test_each_instance_variable.
+
+    * ext/hacks/each_instance_variable.c:
+    Fixed a bug that kept values from being yielded properly.
+
+    * test/test_each_instance_variable.rb:
+    New; not done yet.
+
+    * lib/hacks/const_method.rb, lib/hacks/const_var.rb:
+    const_helpers depends on safe_send.
+
+    * ext/hacks/kernelless_object.c, ext/hacks/each_instance_variable.c, ext/hacks/extconf.rb:
+    Added each_instance_variable.c.
+    Fixed extconf.rb so that each .so doesn't contain every object file.
+
+2002-03-28  Paul Brannan  <cout@rm-f.net>
+
+    * test/ds_test_helpers.rb:
+    Fixed to use terse_block() instead of setting $VERBOSE directly.
+
+    * lib/hacks/fix_trace_func.rb, lib/hacks/loaders.rb, lib/hacks/verbose_block.rb:
+    Added verbose_block.rb.
+
+    * test/Makefile: Fixed misspelling.
+
+2002-03-25  Paul Brannan  <cout@rm-f.net>
+
+    * ext/spawn/extconf.rb, ext/spawn/spawn.c:
+    Initial add.
+
+2002-03-23  Paul Brannan  <cout@rm-f.net>
+
+    * lib/expect.rb, lib/reactor/reactor.rb, lib/reactor/select_reactor.rb, lib/sync/null_mutex.rb, test/test_expect.rb:
+    Fixed expect.rb to wait for messages instead of capturing output to a log and
+    then checking the log.
+    Fixed some of the tests that no longer applied after this change.
+    Fixed some bugs in the select reactor event loop.
+    Added a new parameter to the reactor's work_pending method.
+
+    * lib/expect.rb, lib/reactor/select_reactor.rb, lib/reactor/timer_queue.rb, test/test_expect.rb:
+    Cleaned up some code; expect.rb is temporarily broken.
+
+2002-03-22  Paul Brannan  <cout@rm-f.net>
+
+    * LICENSE, README:
+    Updated version number.
+
+    * lib/hacks/access_blocks.rb:
+    Require loaders from the right place.
+
+    * lib/rollback.rb, test/Makefile, test/test_rollback.rb:
+    Added tests for rollback.
+
+    * ext/expect.rb, lib/expect.rb:
+    Oops, expect.rb belongs in lib, not in ext.
+
+    * ext/expect.rb: Initial add.
+
+2002-03-21  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/const_ref.rb, lib/hacks/mutable_ref.rb, test/Makefile, test/test_const_and_mutable_refs.rb:
+    Added tests for ConstRef and MutableRef.
+
+    * ext/hacks/const_helpers.c, lib/hacks/const_method.rb, lib/hacks/const_ref.rb, lib/hacks/mutable_ref.rb:
+    Added mutable_send and Mutable_Ref.
+
+    * lib/hacks/const_var.rb: Fixed documentation.
+
+    * lib/hacks/const_ref.rb: Initial add.
+
+    * lib/hacks/exception_extensions.rb, test/Makefile, test/test_exception_extensions.rb:
+    Added tests for exception extensions.
+    Cleaned up code for ExceptionExtension mixin.
+
+2002-03-20  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/exception_extensions.rb: Initial add.
+
+2002-03-18  Paul Brannan  <cout@rm-f.net>
+
+    * lib/state_machine.rb: Initial add.
+
+    * lib/hacks/to_proc.rb, test/Makefile, test/test_to_proc.rb:
+    Added ConvertibleToProc.
+
+    * lib/time_block.rb, test/Makefile, test/ds_test_helpers.rb, test/test_time_block.rb:
+    Added time_block.
+
+    * lib/hacks/accessors.rb, lib/hacks/automatic_object.rb, lib/hacks/base_class_intercept.rb, lib/hacks/observable_method.rb, lib/hacks/private_class_vars.rb:
+    Fixed documentation.
+
+    * LICENSE, README:
+    Updated version number and documentation.
+
+2002-03-17  Paul Brannan  <cout@rm-f.net>
+
+    * lib/sync/rwlock.rb: Updated documentation.
+
+    * lib/sync/lock.rb, lib/sync/null_mutex.rb, lib/sync/rwlock.rb, lib/sync/semaphore.rb, lib/sync/wait_queue.rb:
+    Fixed formatting, changed interface for locking functions to be more
+    intuitive, fixed some bugs, moved tests into the test directory.
+
+    * test/sync/test_rwlock.rb, test/sync/test_semaphore.rb, test/sync/ds_test_helpers.rb:
+    Initial add.
+
+    * test/test_private_instance_vars.rb, lib/hacks/private_instance_vars.rb:
+    Ensure proper cleanup of private instance variables.
+
+    * publish.rb: Remove empty directories.
+
+2002-03-16  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/automatic_object.rb:
+    Make sure ID_REV_MAP gets cleaned up properly.
+
+    * lib/hacks/observable_method.rb:
+    Updated documentation.
+
+    * lib/hacks/refcount.rb, test/Makefile, test/test_refcount.rb:
+    Added tests for refcount.rb.
+
+    * test/test_automatic_object.rb:
+    Added some more assertions.
+
+    * lib/hacks/automatic_object.rb, test/Makefile, test/test_automatic_object.rb:
+    Added AutomaticObject.
+
+    * test/bad_method_call.rb:
+    Fixed reversal of MAJOR/MINOR version numbers.
+
+    * test/test_const_var.rb, test/test_evil_send.rb, test/test_private_instance_vars.rb, test/test_safe_method.rb, ext/hacks/call_stack.c, ext/hacks/kernelless_object.c, ext/hacks/safe_send.c, ext/hacks/safe_send.h, lib/hacks/call_stack.rb, test/bad_method_call.rb:
+    Updated to work with Ruby 1.7.
+
+    * ext/hacks/const_helpers.c, ext/hacks/const_method.c, ext/hacks/extconf.rb, lib/hacks/const_method.rb, lib/hacks/const_var.rb, test/Makefile, test/test_const_var.rb:
+    Renamed const_method.c to const_helpers.c.
+    Added const_var() method for temporarily freezing an object.
+
+2002-02-19  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/inline.rb: Added CFLAGS, LDFLAGS, and CC.
+
+    * lib/hacks/override_method.rb:
+    Better names for "temporary" modules.
+
+2002-02-11  Paul Brannan  <cout@rm-f.net>
+
+    * lib/rollback.rb: Initial add.
+
+2002-02-01  Paul Brannan  <cout@rm-f.net>
+
+    * examples/setvbuf/pipe.rb, examples/setvbuf/test.rb:
+    Initial add.
+
+    * lib/hacks/observable_method.rb, test/Makefile, test/test_observable_method.rb:
+    Added ObservableMethod.
+
+2002-01-31  Paul Brannan  <cout@rm-f.net>
+
+    * LICENSE, README, publish.rb:
+    Updated.
+
+2002-01-30  Paul Brannan  <cout@rm-f.net>
+
+    * ext/hacks/extconf.rb: fix_trace_func is broken.
+
+    * ext/setvbuf/extconf.rb, ext/setvbuf/setvbuf.c, lib/setvbuf.rb:
+    Initial add.
+
+    * ext/extconf.rb, ext/hacks/call_stack.c, ext/hacks/const_method.c, ext/hacks/const_methods.c, ext/hacks/extconf.rb, ext/hacks/hacks_helper.c, ext/hacks/hacks_helper.h, extconf_helpers.rb, lib/hacks/call_stack.rb, lib/hacks/const_method.rb, lib/hacks/fix_trace_func.rb, lib/hacks/kernelless_object.rb, lib/hacks/safe_send.rb, lib/hacks/secret.rb, test/Makefile:
+    Divided hacks_helper.so into multipls .so's.
+
+2002-01-16  Paul Brannan  <cout@rm-f.net>
+
+    * test/Makefile: Added test_accessors.
+
+    * test/test_accessors.rb, test/test_safe_method.rb:
+    Initial add.
+
+    * lib/hacks/accessors.rb:
+    Fixed; this file was horribly broken.
+
+2002-01-03  Paul Brannan  <cout@rm-f.net>
+
+    * lib/ini.rb: Initial add.
+
+2001-12-19  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/override_method.rb, test/test_override_method.rb:
+    Initial add.
+
+    * ext/hacks/kernelless_object.c:
+    Fixed the naming of the initialize function.
+
+2001-12-18  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/access_blocks.rb: Initial add.
+
+2001-12-14  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/base_class_intercept.rb, lib/hacks/dumpable_proc.rb, lib/hacks/holder.rb, lib/hacks/interface.rb, lib/hacks/safe_mixin.rb, lib/hacks/safe_send.rb, lib/hacks/secret.rb, lib/hacks/with.rb:
+    Many bug fixes: cleaned up base_class_intercept, fixed a deadlock issue with
+    dumpable_proc, added == to holder, fixed documentation for interface.rb and
+    removed debugging output, added checks for Object#extend with safe_mixin,
+    documentation update for safe_send.rb and secret.rb, try to call methods in the
+    current class if a method is not defined in the calling object with with.rb.
+
+    * test/Makefile, test/ds_test_helpers.rb, test/test_alias_class_method.rb, test/test_base_class_intercept.rb, test/test_dumpable_proc.rb, test/test_holder.rb, test/test_interface.rb, test/test_kernelless_object.rb, test/test_method_missing_delegate.rb, test/test_mm_delegate.rb, test/test_path_concat.rb, test/test_private_class_vars.rb, test/test_private_instance_vars.rb, test/test_safe_mixin.rb, test/test_with.rb:
+    Added many new tests and renamed a few tests.
+
+    * test/ds_test_case.rb, test/ds_test_helpers.rb, test/test_call_stack.rb, test/test_const_method.rb, test/test_evil_send.rb, test/test_finalize.rb, test/test_fix_trace_func.rb, test/test_rcr29.rb:
+    Removed DS_Test_Case, since it is no longer necessary.
+
+2001-12-07  Paul Brannan  <cout@rm-f.net>
+
+    * test/test_rcr29.rb: Initial add.
+
+    * ext/rcr29/Makefile, ext/rcr29/README, ext/rcr29/block.i, ext/rcr29/block.rb, ext/rcr29/extconf.rb, ext/rcr29/rcr29.c:
+    Initial add; does not yet work.
+
+2001-12-05  Paul Brannan  <cout@rm-f.net>
+
+    * ext/hacks/call_stack.c, ext/hacks/extconf.rb, lib/hacks/fix_trace_func.rb, test/test_call_stack.rb:
+    Some minor optimizations and bug fixes.
+
+    * lib/mixins/enumerable_container.rb, lib/mixins/fake_indexable_container.rb, lib/mixins/indexable_container.rb, lib/mixins/pair_enumerable_container.rb, lib/mixins/pair_updatable_container.rb, lib/mixins/reverse_indexable_container.rb, lib/mixins/single_enumerable_container.rb, lib/mixins/single_updatable_container.rb:
+    Moved to RubyCollections.
+
+    * extconf.rb: Made install2 a phony rule.
+
+    * README, TODO, ext/list/extconf.rb, ext/list/list_helper.c, lib/binary_tree.rb, lib/enum.rb, lib/extended_array.rb, lib/hash_list.rb, lib/heap.rb, lib/iterator/array_iterator.rb, lib/iterator/buffered_continuation_iterator.rb, lib/iterator/collect_iterator.rb, lib/iterator/continuation_iterator.rb, lib/iterator/generic_iterator.rb, lib/iterator/io_iterator.rb, lib/iterator/iterator.rb, lib/iterator/range_iterator.rb, lib/list.rb, lib/map.rb, lib/regexp_helper.rb, lib/set.rb, lib/sorted_binary_tree.rb, lib/sorted_hash.rb, test/Makefile, test/ds_test_helpers.rb, test/generate_random.rb, test/mixins/array_like_test.rb, test/mixins/comparable_test.rb, test/mixins/container_test.rb, test/mixins/enumerable_test.rb, test/mixins/hash_like_test.rb, test/mixins/indexable_test.rb, test/mixins/orderable_test.rb, test/mixins/pair_enumerable_test.rb, test/mixins/pair_updatable_test.rb, test/mixins/reversable_test.rb, test/mixins/reverse_enumerable_test.rb, test/mixins/reverse_indexable_test.rb, test/test_enum.rb, test/test_fix_trace_func.rb, test/test_hash_list.rb, test/test_heap.rb, test/test_iterator.rb, test/test_list.rb, test/test_map.rb, test/test_set.rb, test/test_sorted_binary_tree.rb:
+    Removed all data structures and put them into RubyCollections.
+
+    * lib/hacks/call_stack.rb: Documentation update.
+
+    * test/ds_test_helpers.rb:
+    Less hacky modifications on $:.
+
+    * ext/hacks/call_stack.c, ext/hacks/const_methods.c, ext/hacks/extconf.rb, ext/hacks/hacks_helper.c, ext/hacks/hacks_helper.h, ext/hacks/kernelless_object.c, ext/hacks/safe_send.c:
+    Split the hacks_helper into multiple source files; some minor optimizations
+    to the call stack.
+
+2001-11-30  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/safe_mixin.rb: Documentation update.
+
+2001-11-29  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/refcount.rb: Initial add.
+
+2001-11-25  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/finalize.rb, lib/hacks/method_missing_delegate.rb:
+    Documentation update.
+
+    * lib/hacks/finalize.rb: Initial add.
+
+    * test/Makefile, test/test_finalize.rb:
+    Added finalize test.
+
+    * lib/hacks/caller_helpers.rb:
+    Fixed a bug that caused absolute pathnames to not work.
+
+2001-11-10  Paul Brannan  <cout@rm-f.net>
+
+    * publish.rb: Remove temporary files.
+
+    * publish.rb: Remove CVS directories.
+
+2001-10-31  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/safe_send.rb:
+    Replaced the method parameter that was removed.
+
+    * ext/hacks/hacks_helper.c, lib/hacks/const_method.rb, lib/hacks/safe_send.rb, test/Makefile, test/test_const_method.rb:
+    Added const_method().  Updated documentation.
+
+    * test/Makefile, test/test_fix_trace_func.rb:
+    Added test_fix_trace_func.
+
+    * lib/hacks/call_stack.rb, lib/hacks/fix_trace_func.rb:
+    Allow multiple trace_funcs to be defined.
+
+2001-10-30  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/loaders.rb: Speed optimization.
+
+    * lib/enum.rb:
+    Don't allow two enums with different types to compare equal.
+
+    * lib/iterator/iterator.rb:
+    Wasn't getting ContinuationIterator.
+
+2001-10-29  Paul Brannan  <cout@rm-f.net>
+
+    * lib/enum.rb: Allow comparisons using ===.
+
+    * extconf.rb, publish.rb:
+    Removed copyright notice, since this is added by publish.rb.
+
+    * README: Updated.
+
+2001-10-28  Paul Brannan  <cout@rm-f.net>
+
+    * extconf.rb, publish.rb:
+    Don't remove Makefiles from the distribution!
+
+    * LICENSE, README:
+    Added a version number.
+
+    * publish.rb: Print "Adding license to ..." message.
+
+    * publish.rb: Initial add.
+
+    * lib/sync/sync.rb, lib/sync/rwlock_old.rb:
+    Removed.
+
+    * lib/reactor/reactor.rb: Documentation update.
+
+    * extconf.rb:
+    Fixed a bug that caused some files to not get installed on some systems.
+
+    * README: Updated.
+
+    * examples/reactor/echo.rb, examples/reactor/test.glade, examples/reactor/test_gtkreactor.rb:
+    Moved from ../../test
+
+    * test/echo.rb, test/test.glade, test/test_gtkreactor.rb:
+    Moved to ../examples
+
+    * COPYING, GPL, LEGAL, LICENSE:
+    Licensing update.
+
+    * README: Updated.
+
+    * extconf.rb:
+    Changed name from 'ds' to 'RubyTreasures'.
+
+2001-10-27  Paul Brannan  <cout@rm-f.net>
+
+    * lib/mixins/enumerable_container.rb, lib/mixins/fake_indexable_container.rb, lib/mixins/indexable_container.rb, lib/mixins/pair_enumerable_container.rb, lib/mixins/pair_updatable_container.rb, lib/mixins/reverse_indexable_container.rb, lib/mixins/single_enumerable_container.rb, lib/mixins/single_updatable_container.rb:
+    Require files using requirelocal, so they will work even after being installed.
+
+    * lib/iterator/generic_iterator.rb:
+    Changed from ContinuationIterator to BufferedContinuationIterator.
+
+    * lib/mixins/enumerable_container.rb:
+    Use a GenericIterator instead of a ContinuationIterator, since it gives
+    better speed.
+
+    * lib/hacks/safe_mixin.rb: Documentation update.
+
+    * TODO, doinstall.rb, extconf.rb, extconf_helpers.rb, lib/binary_tree.rb, lib/hacks/dumpable_proc.rb, lib/hacks/holder.rb, lib/hacks/inline.rb, lib/hacks/loaders.rb, lib/hacks/method_missing_delegate.rb, lib/hacks/private_class_vars.rb, lib/hacks/private_instance_vars.rb, lib/hacks/safe_method.rb, lib/hacks/safe_mixin.rb, lib/hacks/safe_send.rb, lib/hacks/with.rb, lib/hash_list.rb, lib/heap.rb, lib/iterator/generic_iterator.rb, lib/iterator/iterator.rb, lib/list.rb, lib/map.rb, lib/reactor/gtkreactor.rb, lib/reactor/select_reactor.rb, lib/reactor/threaded_gtkreactor.rb, lib/set.rb, lib/sorted_binary_tree.rb, lib/sorted_hash.rb, lib/sync/rwlock.rb, lib/sync/semaphore.rb, test/Makefile, test/ds_test_helpers.rb, test/loaders.rb:
+    First go at being able to install.
+
+    * lib/hacks/secret.rb: Documentation update.
+
+    * lib/hacks/with.rb: Don't commit debugging code!
+
+    * ext/hacks/hacks_helper.c, lib/hacks/kernelless_object.rb, lib/hacks/with.rb:
+    Added a KernellessObject, which is an object with no ancestors (not even
+    Kernel or Object).  This allows me to implement with() in such a way that it
+    will never prefer a global method over an instance method.
+
+2001-10-26  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/secret.rb, lib/hacks/safe_method.rb:
+    Documentation update.
+
+    * TODO: Updated.
+
+    * test/mixins/comparable_test.rb:
+    Don't report that <=> has been checked when it has not been checked.
+
+    * lib/reactor/timer_queue.rb: Fixed some bugs.
+
+    * lib/sync/lock.rb, lib/sync/null_mutex.rb, lib/sync/rwlock.rb, lib/sync/rwlock_old.rb, lib/sync/semaphore.rb, lib/sync/sync.rb, lib/sync/wait_queue.rb, test/echo.rb, test/test.glade, test/test_gtkreactor.rb, lib/reactor/gtkreactor.rb, lib/reactor/reactor.rb, lib/reactor/select_reactor.rb, lib/reactor/threaded_gtkreactor.rb, lib/reactor/timer_queue.rb:
+    Initial add.
+
+    * ext/hacks/hacks_helper.c:
+    Don't handle c-call/c-return; I'm not yet sure how to deal with these, but they
+    are causing trouble at the moment.
+
+    * extconf.rb, makedoc.rb:
+    Moved makedoc.rb functionality straight into the makefile.
+
+    * test/Makefile, test/test_call_stack.rb:
+    Added test_call_stack.rb.
+
+    * lib/hacks/secret.rb: Documentation update.
+
+    * lib/hacks/path_operations.rb:
+    Renamed from realpath.rb.
+
+    * lib/hacks/holder.rb, lib/hacks/safe_mixin.rb:
+    Documentation update.
+
+    * lib/hacks/dumpable_proc.rb: Added to_proc().
+
+    * lib/hacks/loaders.rb:
+    Moved find_file_in_path to path_operations.rb.
+
+    * lib/hacks/realpath.rb:
+    Renamed to path_operations.rb.
+
+    * lib/hacks/inline.rb, lib/hacks/interface.rb, lib/hacks/realpath.rb:
+    Documentation update.
+
+    * lib/hacks/loaders.rb:
+    Don't load a file twice, even if it has the same name (use realpath to get rid
+    of symlinks).
+
+    * lib/hacks/realpath.rb: Initial add.
+
+    * ext/hacks/hacks_helper.c, lib/hacks/call_stack.rb:
+    Implemented $call_stack in C.
+
+    * lib/hash_list.rb: Fixed some bugs.
+
+    * TODO: Updated.
+
+    * ext/list/list_helper.c:
+    Changed // comment to /* */ comment.
+
+2001-10-23  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/call_stack.rb:
+    Changed caller_line to caller_lineno to avoid conflict with caller_helpers.rb.
+
+    * lib/hacks/print_exception.rb:
+    Don't print extra debugging stuff.
+
+2001-10-22  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/print_exception.rb:
+    Don't forget to print the first level of the backtrace!
+
+    * lib/hacks/dumpable_proc.rb: Added bound?().
+
+2001-10-20  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/private_instance_vars.rb:
+    Documentation update, and changed 3rd hash lookup to be object id rather than
+    the object itself.
+
+    * lib/hacks/base_class_intercept.rb, lib/hacks/intercept.rb:
+    Renamed, and added documentation.
+
+    * lib/hacks/private_instance_vars.rb:
+    Fixed a spelling mistake.
+
+    * lib/sorted_binary_tree.rb, lib/binary_tree.rb, lib/hacks/with.rb:
+    Documentation update.
+
+    * lib/hacks/call_stack.rb:
+    Added new methods for more easily accessing call stack data.
+
+    * lib/hacks/private_class_vars.rb, lib/hacks/private_instance_vars.rb:
+    Initial add.
+
+2001-10-18  Paul Brannan  <cout@rm-f.net>
+
+    * makedoc.rb:
+    Use a pre-installed rubydoc instead of the local one, which has been deleted.
+
+    * TODO: Updated.
+
+    * rubydoc.tmpl.rb:
+    Removed; html2.tmpl is sufficient now.
+
+2001-10-17  Paul Brannan  <cout@rm-f.net>
+
+    * rubydoc.tmpl.rb:
+    Got rid of the separate TextOutputGenerator and HtmlOutputGenerator, and
+    combined them into a single OutputGenerator that uses templates.
+
+    * rubydoc.tmpl.rb:
+    Second phase of the new template style.
+
+    * rubydoc.tmpl.rb: Initial add.
+
+    * makedoc.rb, rubydoc.tmpl:
+    Began move to new template format.
+
+    * rubydoc.tmpl: Templatized the index file.
+
+2001-10-16  Paul Brannan  <cout@rm-f.net>
+
+    * lib/iterator/buffered_continuation_iterator.rb:
+    Documentation update.
+
+    * lib/hacks/inline.rb: Added a clean() method.
+
+2001-10-15  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/call_stack.rb:
+    Fixed a bug that cause $call_stack to not be initialized.
+
+    * rubydoc.tmpl: Better spacing between parameters.
+
+    * lib/hacks/dumpable_proc.rb: Documentation update.
+
+    * lib/hacks/dumpable_proc.rb, lib/hacks/intercept.rb:
+    Initial add.
+
+    * rubydoc.tmpl: Minor formatting change.
+
+    * makedoc.rb:
+    Moved the index generation logic into ruybdoc.
+
+    * TODO: Updated.
+
+    * lib/mixins/fake_indexable_container.rb, lib/mixins/enumerable_container.rb, lib/hacks/call_stack.rb, lib/hacks/with.rb:
+    Documentation update.
+
+    * makedoc.rb, rubydoc.tmpl:
+    Documentation formatting changes.
+
+    * lib/hacks/comparable_nil.rb, lib/hacks/holder.rb, lib/hacks/inline.rb, lib/mixins/single_enumerable_container.rb:
+    Documentation updates.
+
+2001-10-14  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/loaders.rb: Removed comments.  Fixed bug.
+
+    * lib/hacks/loaders.rb:
+    Added an extensions argument to find_file_in_path.  Added some comments.
+
+    * lib/hacks/inline.rb: Initial add.
+
+2001-10-11  Paul Brannan  <cout@rm-f.net>
+
+    * rubydoc.tmpl: Better titles.
+
+    * makedoc.rb: Better indexing.
+
+    * makedoc.rb, rubydoc.tmpl:
+    Added support for titles.  Fixed a bug that caused $stdout to be closed after
+    processing one file.
+
+    * rubydoc.tmpl:
+    Don't generate nil version/author entries.
+
+    * TODO: Added a switch to turn on debug mode.
+
+    * lib/hacks/alias_class_method.rb:
+    Documentation update.
+
+    * TODO, rubydoc.tmpl:
+    Generate documentation for mixins automatically.
+
+    * lib/hacks/print_exception.rb: Initial add.
+
+    * lib/binary_tree.rb, lib/enum.rb, lib/hacks/call_stack.rb, rubydoc.tmpl:
+    Better formatting for <pre>..</pre>, better template support for global
+    comments.
+
+    * rubydoc.tmpl: Colorize "Constants".
+
+    * rubydoc.tmpl:
+    My first attempt at a colorized template.
+
+    * rubydoc.tmpl: Better syntax for templates.
+
+    * TODO: Updated.
+
+    * makedoc.rb, rubydoc.tmpl:
+    First go at documentation templates.
+
+    * TODO:
+    Documentation for public/private/protected/secret access levels.  Cleaned up
+    some ugly code.
+
+2001-10-10  Paul Brannan  <cout@rm-f.net>
+
+    * test/ds_test_helpers.rb:
+    GenericIterator is now a method instead of a class.
+
+    * TODO, lib/enum.rb:
+    Added rubydoc support for class << Foo.
+
+    * TODO: Documentation update.
+
+    * lib/iterator/generic_iterator.rb:
+    A class's .new method should NOT return an object of a different type.
+
+    * lib/iterator/buffered_continuation_iterator.rb, lib/iterator/continuation_iterator.rb, lib/hacks/accessors.rb, lib/hacks/alias_class_method.rb:
+    Documentation update.
+
+    * TODO: Updated.
+
+    * lib/hacks/holder.rb: Documentation update.
+
+    * TODO: Treat blank comment lines as new paragraph.
+
+    * lib/map.rb, lib/hacks/with.rb:
+    Documentation update.
+
+    * lib/set.rb, test/test_set.rb:
+    Changed insert() to store().
+
+    * TODO: Updated.
+
+    * lib/binary_tree.rb, lib/mixins/fake_indexable_container.rb:
+    Documentation update.
+
+    * makedoc.rb: More robust.
+
+    * makedoc.rb: Sort the index.
+
+    * makedoc.rb:
+    Fixed a bug where "make docs" did not work when RUBYLIBY was already set.
+
+    * TODO: Updated.
+
+    * test/tests.txt: Removed.
+
+    * lib/binary_tree.rb:
+    Added delete_node().  I'm not sure if this function is right, so it may go away.
+
+    * lib/hacks/safe_mixin.rb, lib/mixins/enumerable_container.rb, lib/mixins/fake_indexable_container.rb, lib/mixins/indexable_container.rb, lib/mixins/pair_enumerable_container.rb, lib/mixins/pair_updatable_container.rb, lib/mixins/reverse_indexable_container.rb, lib/mixins/single_enumerable_container.rb, lib/mixins/single_updatable_container.rb:
+    Changed safe_mixin() to mixin_requires().
+
+    * test/test_sorted_binary_tree.rb:
+    Renamed test_binary_tree.rb to test_sorted_binary_tree.rb.
+
+    * lib/iterator/buffered_continuation_iterator.rb, lib/iterator/continuation_iterator.rb, lib/iterator/io_iterator.rb:
+    Changed evil_send to safe_send.
+
+    * lib/hacks/safe_method.rb: Initial add.
+
+    * lib/hacks/evil_send.rb, lib/hacks/method_missing_delegate.rb, lib/hacks/safe_send.rb, lib/hacks/secret.rb, test/test_evil_send.rb:
+    Renamed evil_send.rb to safe_send.rb.
+
+    * TODO: Updated.
+
+    * lib/heap.rb:
+    Fixed it so that it now works; added many new methods/mixins to make Heap
+    look/feel more like a Hash.
+
+    * test/mixins/enumerable_test.rb, test/test_heap.rb:
+    More tests for Heap.
+
+    * test/Makefile, test/mixins/enumerable_test.rb, test/test_heap.rb:
+    Began implementing Heap tests.
+
+    * lib/binary_tree.rb:
+    Fixed clone() to properly taint/freeze.
+
+    * lib/heap.rb: Fixed a LOT of bugs.
+
+    * test/test_binary_tree.rb:
+    Renamed to test_sorted_binary_tree.rb.
+
+    * lib/hacks/safe_mixin.rb, lib/hacks/secret.rb:
+    Use "eval" instead of "(eval)" for better stack traces.
+
+    * test/Makefile, test/ds_test_helpers.rb:
+    Added test_evil_send.rb.
+
+    * lib/hacks/evil_send.rb:
+    Removed access_level_check.rb.
+
+    * test/test_evil_send.rb: Initial add.
+
+    * lib/hacks/evil_send.rb, lib/hacks/method_missing_delegate.rb, lib/hacks/with.rb:
+    safe_send() is now implemented in C.
+
+2001-10-09  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/access_level_check.rb:
+    Removed, since this method is too slow in pure Ruby.
+
+    * ext/hacks/extconf.rb, ext/hacks/hacks_helper.c:
+    Initial add.
+
+    * test/test_iterator.rb:
+    Added BufferedContinuationIterator.
+
+    * lib/iterator/continuation_iterator.rb:
+    Removed unnecessary comments/code.
+
+    * lib/iterator/iterator.rb:
+    Added BufferedContinuationIterator.
+
+    * lib/iterator/buffered_continuation_iterator.rb:
+    Initial add.
+
+    * TODO: Updated.
+
+    * lib/binary_tree.rb, lib/enum.rb, lib/extended_array.rb, lib/hash_list.rb, lib/heap.rb, lib/set.rb, lib/sorted_hash.rb:
+    Use &block as a parameter, where appropriate, to indicate that the block is
+    required.
+
+    * lib/hacks/evil_send.rb, lib/hacks/method_missing_delegate.rb:
+    Use &block instead of yield hack.
+
+    * lib/hacks/loaders.rb: Documentation update.
+
+    * test/ds_test_helpers.rb:
+    Put local stuff first in the path.
+
+    * TODO: Updated.
+
+    * test/mixins/enumerable_test.rb:
+    Fixed test_join() to work with BinaryTree.
+
+    * lib/extended_array.rb, lib/heap.rb, lib/set.rb:
+    Misc. changes.
+
+    * test/Makefile, test/ds_test_case.rb, test/test_enum.rb:
+    Implemented Enum test.
+
+    * test/test_heap.rb: Initial add.
+
+    * test/Makefile, test/mixins/enumerable_test.rb, test/test_set.rb:
+    Implemented most tests for Set.
+
+2001-10-08  Paul Brannan  <cout@rm-f.net>
+
+    * lib/binary_tree.rb, lib/extended_array.rb, lib/hash_list.rb, lib/mixins/pair_enumerable_container.rb, test/ds_test_helpers.rb, test/generate_random.rb, test/mixins/reverse_indexable_test.rb, test/test_hash_list.rb, test/test_list.rb:
+    Fixed a lot of tests and minor bugs.
+
+    * test/mixins/reverse_indexable_test.rb, lib/extended_array.rb:
+    Initial add.
+
+    * lib/hacks/loaders.rb:
+    Override require() and load() to always use the full pathname.  Use a C-style
+    protection mechanism to make sure no one loads this file twice by accident.
+
+    * lib/binary_tree.rb, lib/hacks/comparable_nil.rb, lib/iterator/array_iterator.rb, lib/iterator/collect_iterator.rb, lib/iterator/continuation_iterator.rb, lib/iterator/generic_iterator.rb, lib/iterator/io_iterator.rb, lib/iterator/range_iterator.rb, lib/sorted_binary_tree.rb, lib/sorted_hash.rb, test/ds_test_helpers.rb, test/mixins/hash_like_test.rb, test/mixins/indexable_test.rb, test/mixins/pair_enumerable_test.rb, test/mixins/pair_updatable_test.rb, test/mixins/reversable_test.rb, test/mixins/reverse_enumerable_test.rb, test/test_binary_tree.rb:
+    Lots of changes.  Fixed some tests, added others, and made others faster.
+    Changed the names of the iterators to remove the _, and changed the limit on
+    the GenericIterator to have 1000 elements or more before it picks a
+    ContinuationIterator over a CollectIterator.
+
+    * test/mixins/reverse_enumerable_test.rb:
+    Initial add.
+
+    * test/mixins/container_test.rb, test/mixins/enumerable_test.rb:
+    Faster.
+
+    * test/ds_test_helpers.rb, test/test_binary_tree.rb:
+    Changes to container generation.
+
+    * test/generate_random.rb: Initial add.
+
+    * TODO: Added possible names for the project.
+
+    * lib/hacks/path_concat.rb: Documentation update.
+
+    * lib/hacks/call_stack.rb: Initial add.
+
+    * lib/hacks/holder.rb: Documentation update.
+
+    * lib/dumpable_proc.rb:
+    Removed; too many problems (particularly, that the binding is wrong).
+
+    * test/mixins/reversable_test.rb: Initial add.
+
+    * lib/mixins/pair_enumerable_container.rb, lib/sorted_binary_tree.rb:
+    Fixed fetch().
+
+    * test/mixins/hash_like_test.rb:
+    Fixed the fetch() test.
+
+2001-10-07  Paul Brannan  <cout@rm-f.net>
+
+    * test/mixins/hash_like_test.rb: Minor bug fixes.
+
+    * lib/mixins/pair_enumerable_container.rb, lib/mixins/pair_updatable_container.rb, lib/sorted_binary_tree.rb:
+    Fixed fetch(), [], and has_key?.
+
+    * lib/hacks/evil_send.rb:
+    Better access level checking when not in DEBUG mode.
+
+    * test/ds_test_helpers.rb, test/mixins/container_test.rb, test/test_binary_tree.rb:
+    Fixed some tests.
+
+    * lib/binary_tree.rb, lib/sorted_binary_tree.rb:
+    Implemented dup/clone.
+
+    * lib/list.rb: Fixed a spelling error.
+
+    * TODO: Updated.
+
+    * lib/binary_tree.rb, lib/sorted_binary_tree.rb, test/Makefile, test/mixins/container_test.rb, test/test_binary_tree.rb:
+    Separated BinaryTree and SortedBinaryTree.
+
+    * lib/hacks/access_level_check.rb, lib/hacks/method_missing_delegate.rb, lib/hacks/with.rb:
+    Fixed some bugs relating to access control.
+
+2001-10-05  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/holder.rb: Initial add.
+
+    * lib/hacks/method_missing_delegate.rb:
+    Added __setobj__ and __getobj__.
+
+    * lib/hacks/path_concat.rb, lib/hacks/comparable_nil.rb:
+    Initial add.
+
+    * lib/hacks/caller_helpers.rb: Added a comment.
+
+    * lib/regexp_helper.rb: Initial add.
+
+    * lib/iterator/generic_iterator.rb, lib/iterator/range_iterator.rb:
+    Minor changes, plus added IO_Iterator.
+
+    * lib/iterator/io_iterator.rb, lib/iterator/array_iterator.rb, lib/iterator/generic_iterator.rb, lib/iterator/range_iterator.rb:
+    Initial add.
+
+    * lib/iterator/iterator.rb:
+    No sense in having information in multiple places.
+
+    * lib/hacks/with.rb: Added some comments.
+
+    * lib/hacks/loaders.rb:
+    Use the caller_helpers, since they provide a lot of additional functionality.
+
+    * lib/hacks/caller_helpers.rb:
+    Forgot the argument to parse_caller()
+
+    * lib/hacks/caller_helpers.rb:
+    Grab the cwd when this file is require'd.
+
+    * lib/hacks/caller_helpers.rb: Initial add.
+
+    * lib/hacks/with.rb: Don't use (eval) as the file.
+
+    * lib/hacks/evil_send.rb:
+    Moved the access level check to access_level_check.rb.
+
+    * lib/hacks/access_level_check.rb, lib/hacks/with.rb:
+    Initial add.
+
+2001-10-04  Paul Brannan  <cout@rm-f.net>
+
+    * lib/dumpable_proc.rb, test/test_mm_delegate.rb, lib/hacks/method_missing_delegate.rb:
+    Initial add.
+
+    * lib/hacks/evil_send.rb: Fixed a LOT of problems.
+
+2001-09-28  Paul Brannan  <cout@rm-f.net>
+
+    * test/ds_test_helpers.rb, test/test_iterator.rb:
+    Better exception tests.
+
+    * lib/iterator/continuation_iterator.rb:
+    Fixed to handle exceptions properly.
+
+    * lib/iterator/collect_iterator.rb: Added a comment.
+
+    * test/Makefile:
+    Added "all" rule to fix error message when building.
+
+    * test/ds_test_helpers.rb, test/mixins/hash_like_test.rb, test/mixins/orderable_test.rb, test/test_binary_tree.rb, test/test_hash_list.rb, test/test_iterator.rb, test/test_list.rb:
+    Updated tests to work with BinaryTree.
+
+    * lib/binary_tree.rb:
+    Fixed to allow nil elements in the tree, added reverse_each, first, and last.
+
+    * lib/sorted_hash.rb: Initial add.
+
+    * lib/iterator/continuation_iterator.rb:
+    Hopefully a permanent workaround for the Ruby callcc bug, plus some additional
+    speed.
+
+2001-09-26  Paul Brannan  <cout@rm-f.net>
+
+    * test/test_binary_tree.rb: Added some new tests.
+
+    * test/Makefile: Added test_binary_tree rule.
+
+    * test/mixins/comparable_test.rb, test/mixins/indexable_test.rb:
+    Added some new tests.
+
+    * test/mixins/hash_like_test.rb, test/mixins/pair_enumerable_test.rb, test/mixins/pair_updatable_test.rb, test/test_binary_tree.rb:
+    Initial add.
+
+    * test/ds_test_case.rb:
+    Fixed a bug that was causing retval to not be correct.
+
+    * lib/hash_list.rb: Fixed reverse!().
+
+    * lib/iterator/continuation_iterator.rb:
+    Another segfault workaround.
+
+    * lib/hash_list.rb:
+    Fixed reverse_each() and reverse_each_index().
+
+    * lib/hash_list.rb: Fixed first/last.
+
+    * lib/hash_list.rb: Fixed dup/clone.
+
+    * test/ds_test_helpers.rb: No warnings for runit.
+
+    * test/Makefile: Much cleaner now.
+
+2001-09-25  Paul Brannan  <cout@rm-f.net>
+
+    * test/Makefile: Minor updates.
+
+    * test/mixins/indexable_test.rb, test/test_hash_list.rb:
+    Initial add.
+
+    * test/Makefile: Added test for HashList.
+
+    * test/ds_test_helpers.rb, test/mixins/enumerable_test.rb, test/mixins/orderable_test.rb:
+    Implemented more tests.
+
+    * ext/list/list_helper.c:
+    Fixed first() and last() to work with empty lists.
+
+    * lib/mixins/enumerable_container.rb: Fixed join().
+
+    * TODO: Updated.
+
+    * test/ds_test_helpers.rb, test/mixins/array_like_test.rb, test/mixins/comparable_test.rb, test/mixins/container_test.rb, test/mixins/enumerable_test.rb, test/mixins/orderable_test.rb, test/test_list.rb:
+    Many updates.
+
+    * ext/list/list_helper.c: Fixed dup() and clone().
+
+2001-09-23  Paul Brannan  <cout@rm-f.net>
+
+    * test/ds_test_helpers.rb, test/mixins/array_like_test.rb, test/test_list.rb:
+    Implemented array-like tests.
+
+    * lib/iterator/continuation_iterator.rb:
+    Fixed a bug that kept the continuation iterator from working with empty lists.
+
+    * test/common_tests.rb: Removed.
+
+    * test/Makefile, test/common_tests.rb, test/tests.txt:
+    Initial add.
+
+    * lib/binary_tree.rb, lib/hash_list.rb, lib/heap.rb, lib/set.rb:
+    Removed some methods that were implemented elsewhere.
+
+    * lib/mixins/reverse_indexable_container.rb:
+    Initial add.
+
+    * TODO: Updated.
+
+    * test/ds_test_case.rb, test/test_list.rb:
+    Updated tests to use mixins for common tests.
+
+    * test/mixins/array_like_test.rb, test/mixins/comparable_test.rb, test/mixins/container_test.rb, test/mixins/enumerable_test.rb, test/mixins/orderable_test.rb:
+    Initial add.
+
+2001-09-22  Paul Brannan  <cout@rm-f.net>
+
+    * test/ds_test_case.rb, test/ds_test_helpers.rb, test/test_list.rb:
+    Added size and length tests; fixed the tests so that one test does not
+    interfere with another if they are run in the same process.
+
+    * lib/mixins/single_updatable_container.rb:
+    Initial add.
+
+    * extconf.rb, extconf_helpers.rb, test/ds_test_case.rb, test/ds_test_helpers.rb, test/test_list.rb:
+    Added .PHONY targets and got "make test" to work.
+
+    * extconf_helpers.rb:
+    Display the recursion level, like make does.
+
+    * TODO: Updated.
+
+    * test/test_list.rb:
+    First try for using RUnit to test.
+
+    * test/ds_test_case.rb, test/ds_test_helpers.rb:
+    Initial add.
+
+    * test/helpers.rb: Renamed to ds_test_helpers.rb.
+
+    * README, TODO: Minor updates.
+
+    * extconf.rb, extconf_helpers.rb:
+    Updated to generate proper documentation.
+
+    * makedoc.rb: Initial add.
+
+    * TODO: Updated.
+
+    * lib/list.rb: Updated documentation.
+
+    * ext/list/list_helper.c:
+    Fixed each() and added reverse_each().
+
+    * lib/mixins/fake_indexable_container.rb:
+    Initial add.
+
+2001-09-21  Paul Brannan  <cout@rm-f.net>
+
+    * TODO, lib/hash_list.rb, lib/list.rb:
+    Moved some methods from list to a mixin.
+
+    * TODO, ext/list/list_helper.c, lib/list.rb, lib/set.rb, test/test_list.rb:
+    Added a few new methods to List.
+
+    * README, TODO: Updated.
+
+    * lib/mixins/single_enumerable_container.rb:
+    Initial add.
+
+    * TODO, extconf.rb, lib/hash_list.rb, lib/mixins/enumerable_container.rb, lib/mixins/reverse_indexable_container.rb, test/test_list.rb:
+    Update to get everything to compile, and to get simple tests working for
+    List and HashList.
+
+    * lib/hacks/safe_mixin.rb:
+    Made it work (was previously never tested).
+
+    * lib/hacks/alias_class_method.rb: Initial add.
+
+    * ext/list/list_helper.c: Added methods size/length
+
+    * test/helpers.rb:
+    Correctly set $: for all dirs in the ext/ subdirectory.
+
+    * lib/list.rb:
+    Use 'require' for list_helper instead of 'requirelocal', since list_helper is
+    in a different directory.
+
+    * extconf_helpers.rb, ext/list/extconf.rb:
+    Initial add.
+
+    * ext/list/list_helper.c:
+    Fixed the name of the Init function.
+
+    * ext/extconf.rb: Initial add.
+
+    * TODO: Updated.
+
+2001-09-20  Paul Brannan  <cout@rm-f.net>
+
+    * lib/hacks/evil_send.rb, lib/hacks/secret.rb:
+    secret now uses evil_send.
+
+    * lib/hacks/accessors.rb: Documentation update.
+
+    * lib/hacks/safe_mixin.rb:
+    Call the original append_features method, in case one is already defined.
+
+    * lib/hacks/evil_send.rb: Initial add.
+
+    * lib/mixins/enumerable_container.rb:
+    to_s() now uses join(), and join() has been better commented.
+
+    * lib/iterator/continuation_iterator.rb:
+    Make sure we don't reach the end of initialize(), since this will cause a
+    segfault (we won't, but just in case...).
+
+2001-09-19  Paul Brannan  <cout@rm-f.net>
+
+    * lib/mixins/enumerable_container.rb:
+    EnumerableContainer requires size(), temporarily.
+
+    * lib/iterator/continuation_iterator.rb:
+    Got rid of the speed hit that was present before in the bug workaround.
+
+    * TODO, ext/list/list_helper.c, lib/list.rb, lib/mixins/enumerable_container.rb, test/helpers.rb, test/test_iterator.rb:
+    Misc. updates.
+
+    * ext/list/list_helper.c: Moved from ..
+
+    * ext/list_helper.c: Moved to list/.
+
+    * lib/iterator/continuation_iterator.rb:
+    Provided a workaround for a bug in Ruby.
+
+    * TODO: Updated.
+
+    * lib/binary_tree.rb, lib/hash_list.rb, lib/heap.rb, lib/iterator/collect_iterator.rb, lib/iterator/continuation_iterator.rb, lib/list.rb, lib/map.rb, lib/mixins/enumerable_container.rb, lib/set.rb:
+    Use requirelocal instead of require, where appropriate.  Add finished? methods
+    to the iterators.  Added an eql? method that uses a continuation iterator to do
+    its work.
+
+    * lib/hacks/loaders.rb: Initial add.
+
+    * TODO: Updated.
+
+    * lib/hacks/safe_mixin.rb:
+    Don't depend on inspect() working correctly.
+
+    * lib/mixins/enumerable_container.rb, lib/mixins/indexable_container.rb, lib/mixins/pair_enumerable_container.rb, lib/mixins/pair_updatable_container.rb, lib/mixins/reverse_indexable_container.rb, lib/binary_tree.rb, lib/hash_list.rb, lib/heap.rb, lib/list.rb, lib/set.rb:
+    Added many new methods, use safe_mixin to make sure that each class defines the
+    appropriate functions when it mixes in a module.
+
+    * lib/hacks/accessors.rb, lib/hacks/interface.rb, lib/hacks/safe_mixin.rb, lib/hacks/secret.rb, lib/mixins/reverse_indexable_container.rb:
+    Initial add.
+
+    * lib/iterator/continuation_iterator.rb:
+    Added the ability to iterate using something other than each().
+
+    * lib/mixins/indexable_container.rb:
+    Added each_index method.
+
+    * lib/mixins/enumerable_container.rb:
+    Removed to_a, since this is defined in Enumerable.
+
+    * lib/mixins/enumerable_container.rb, lib/mixins/indexable_container.rb, lib/mixins/pair_enumerable_container.rb, lib/mixins/pair_updatable_container.rb:
+    Moved index() to indexable_container.rb.
+
+    * lib/mixins/indexable_container.rb: Initial add.
+
+2001-09-18  Paul Brannan  <cout@rm-f.net>
+
+    * TODO: Updated.
+
+    * lib/hash_list.rb, lib/heap.rb, lib/list.rb, lib/set.rb:
+    Changed ConvertibleContainer to EnumerableContainer.
+
+    * lib/mixins/pair_enumerable_container.rb:
+    Moved functions that require fetch/store to pair_updatable_container.rb.
+
+    * lib/binary_tree.rb:
+    Implemented a number of methods.
+
+    * lib/mixins/enumerable_container.rb: Initial add.
+
+    * lib/mixins/convertible_container.rb:
+    Moved to enumerable_container.rb.
+
+    * lib/mixins/pair_updatable_container.rb:
+    Added replace().
+
+    * lib/mixins/pair_updatable_container.rb, lib/mixins/pair_enumerable_container.rb:
+    Initial add.
+
+    * TODO: Updated.
+
+    * lib/heap.rb, lib/map.rb:
+    First implementation of Heap.  Still needs to be tested.  Added a comment to
+    Map regarding the idea that perhaps certain classes (Map, Priority_Queue, etc.)
+    should simply be constructors for other classes that contain the implementation
+    of the desired data structure.
+
+2001-09-16  Paul Brannan  <cout@rm-f.net>
+
+    * lib/boolean_array.rb: Removed.
+
+    * lib/boolean_array.rb: Initial add.
+
+    * lib/binary_tree.rb:
+    BinaryTree#[] Was returning nil instead of @default; fixed.
+
+    * TODO: Updated.
+
+    * lib/binary_tree.rb, lib/hash_list.rb, lib/heap.rb, lib/list.rb, lib/set.rb:
+    All containers now use ConvertibleContainer for to_s and to_a.  Also fixed
+    a bug in BinaryTree that caused elements to be inserted in reverse order.
+
+    * lib/mixins/convertible_container.rb: Initial add.
+
+    * ext/list_helper.c, extconf.rb:
+    Moved all C extensions to the ext directory.
+
+    * lib/list_helper.c: Moved to ../ext.
+
+2001-09-15  Paul Brannan  <cout@rm-f.net>
+
+    * test/test_enum.rb, test/test_iterator.rb, test/test_list.rb, test/test_map.rb, test/test_set.rb:
+    Updated to use common helpers.
+
+    * test/helpers.rb: Initial add.
+
+    * LICENSE, README, TODO, extconf.rb, lib/binary_tree.rb, lib/enum.rb, lib/hash_list.rb, lib/heap.rb, lib/iterator/collect_iterator.rb, lib/iterator/continuation_iterator.rb, lib/iterator/iterator.rb, lib/list.rb, lib/list_helper.c, lib/map.rb, lib/set.rb, test/test_enum.rb, test/test_iterator.rb, test/test_list.rb, test/test_map.rb, test/test_set.rb:
+    Imported files
+
+    * LICENSE, README, TODO, extconf.rb, lib/binary_tree.rb, lib/enum.rb, lib/hash_list.rb, lib/heap.rb, lib/iterator/collect_iterator.rb, lib/iterator/continuation_iterator.rb, lib/iterator/iterator.rb, lib/list.rb, lib/list_helper.c, lib/map.rb, lib/set.rb, test/test_enum.rb, test/test_iterator.rb, test/test_list.rb, test/test_map.rb, test/test_set.rb:
+    New file.
+

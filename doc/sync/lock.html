@@ -1,0 +1,28 @@
+<html><head><title>sync/lock</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>sync/lock</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module Lock</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>self.double_lock(lock1, lock2)</h3><ul><p>Get two locks at once; in order to prevent deadlock, don't keep
+one lock if both cannot be obtained.
+<p>TODO: Can I make this generic for n locks?
+<p>
+
+</ul>
+
+<h3>self.double_unlock(lock1, lock2)</h3><ul><p>Unlock two locks at once.
+<p>
+
+</ul>
+
+<h3>self.swap_lock(locked_lock, unlocked_lock)</h3><ul><p>Lock one lock and unlock another.
+<p>
+
+</ul>
+
+<h3>self.atomic(&block)</h3><ul><p>Call a block with Thread.critical set to true; ensure that it is
+reset to false after.
+
+</ul>
+
+</ul>
+</body></html>

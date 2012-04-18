@@ -1,0 +1,36 @@
+<html><head><title>hacks/fix_trace_func</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/fix_trace_func</font></h1></td></tr></table>
+<p>A hack to allow multiple trace_funcs.  This should automatically call all
+trace funcs in the order in which they were added.  Any existing trace
+func that is defined when this script is required may be wiped.
+<p>
+
+
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>module Kernel</font></h2></td></tr></table><ul>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>set_trace_func(func)</h3><ul><p>Add a new trace func.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>func&nbsp;&nbsp;</th><td>the func to add.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the id of the func.
+<p>
+</ul>
+
+<h3>remove_trace_func(id)</h3><ul><p>Remove a trace func.
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>func&nbsp;&nbsp;</th><td>the id of the func to remove.
+</td></tr>
+</table>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="verbose_block.html">verbose_block</a></strong><br>
+
+</body></html>

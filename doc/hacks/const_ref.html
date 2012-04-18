@@ -1,0 +1,39 @@
+<html><head><title>hacks/const_ref</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/const_ref</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class ConstRef &lt; Object</font></h2></td></tr></table><ul>In C, there are two types of constant pointers:
+<ol>
+  <li>A constant pointer, so the pointer cannot change
+  <li>A pointer to a constant; the pointer can change, but the object cannot
+      be changed through this pointer (even though the object itself may not
+      be a constant).
+</ol>
+<p>Ruby's constants are like #1, above.
+<p>Ruby has frozen objects, but no built-in equivalent to #2.  A Const_Ref is
+a reference to an object that freezes the object before calling methods on
+it, and unfreezes the object when the method returns (if the object was not
+already frozen before the method was called).
+<p>This is not quite the same as a pointer to a constant, but is similar.  It
+differs in the following example:
+<ol>
+  <li>A holds a Const_Ref to B
+  <li>C holds a reference to B
+  <li>B holds a reference to C
+  <li>A calls a method on B, which calls a method on C, which modifies B.
+</ol>
+<p>This method call will fail in Ruby; it would have succeded in C.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(obj)</h3><ul><p>
+
+</ul>
+
+<h3>method_missing(*message, &block)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="const_method.html">const_method</a></strong><br>
+
+</body></html>

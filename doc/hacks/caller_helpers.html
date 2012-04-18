@@ -1,0 +1,33 @@
+<html><head><title>hacks/caller_helpers</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/caller_helpers</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>caller_file_pathname(filename)</h3><ul><p>Return the full pathname of a file, relative to $initial_directory.
+<p>TODO: The user must not chdir to an alternate directory before requiring this
+file.
+<p>TODO: This does not check to see if the file does not exist.
+<p>TODO: This does not check to see if the file is a shared object.
+<p>TODO: This does not check to see if the file is "(eval)".
+<p><p>
+<p><strong>Returns:</strong> the full pathname of $0, or nil if it cannot be determined.
+<p>
+</ul>
+
+<h3>parse_caller(caller_str)</h3><ul><p>Parse a caller string and break it into its components.
+<p>Note: If the user decides to redefine caller() to output data in a different
+format, then the results will be undefined.
+<p><p>
+<p><strong>Returns:</strong> file (String), lineno (Integer), method (Symbol)
+<p>
+</ul>
+
+<h3>caller_line(level=<i>0</i>)</h3><ul><p>Return a string representing the line at the given caller level.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>level&nbsp;&nbsp;</th><td>the level of the line desired, relative to the the method that called caller_line.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> a string holding the contents of the desired line.
+<p>
+</ul>
+
+</body></html>

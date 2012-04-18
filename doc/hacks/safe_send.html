@@ -1,0 +1,45 @@
+<html><head><title>hacks/safe_send</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/safe_send</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>safe_send(object, method, *args, &block)</h3><ul><p>Object#send is broken, in that it allows private methods to be called, even
+though they are private.  This method will check for calls to protected
+and private methods to make sure that they are not made; a NameError
+be thrown if they are.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>object&nbsp;&nbsp;</th><td>the object to send the message to.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>method&nbsp;&nbsp;</th><td>the method to call on the object.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>args&nbsp;&nbsp;</th><td>the arguments to the method.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>block&nbsp;&nbsp;</th><td>an optional code block to send.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the return value from the method call.
+<p>
+</ul>
+
+<h3>evil_send(object, method, *args, &block)</h3><ul><p>Always send a message to an object, even if the requested method is private
+or protected.  Does not work for secret methods, since they do access
+checking on themselves.
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>object&nbsp;&nbsp;</th><td>the object to send the message to.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>method&nbsp;&nbsp;</th><td>the method to call on the object.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>args&nbsp;&nbsp;</th><td>the arguments to the method.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>an&nbsp;&nbsp;</th><td>optional code block to send.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> block the return value from the method call.
+<p>
+</ul>
+
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="safe_send.so.html">safe_send.so</a></strong><br>
+
+</body></html>

@@ -1,0 +1,52 @@
+<html><head><title>hacks/private_class_vars</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/private_class_vars</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class Module &lt; Object</font></h2></td></tr></table><ul>A hack to allow easy access to private class variables.
+<p>TODO: I'm not 100% convinced that this works as it should.
+<p>Example:
+<pre>
+  class Foo
+    private_class_var :foo
+<p>    self.foo = 1
+<p>    def xyz
+      # Don't use self.type.foo here, otherwise you will get the derived
+      # class's foo.
+      Foo.foo
+    end
+  end
+<p>  f = Foo.new
+  p f.xyz             #=> 1
+  p Foo.foo           #=&gt; (NameError)
+</pre>
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>private_class_var(symbol, initial_value=<i>nil</i>)</h3><ul><p>Define a new private class variable.  The class variable will be
+accessible from the class with "self.symbol" and from instances of the
+class with "Class.symbol".
+<p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>symbol&nbsp;&nbsp;</th><td>the name of the private class variable.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>initial_value&nbsp;&nbsp;</th><td>the initial value for the variable.
+</td></tr>
+</table>
+
+</ul>
+
+<h3>self.#{symbol}()</h3><ul><p>
+
+</ul>
+
+<h3>self.#{symbol}=<i>(rhs</i>)</h3><ul><p>
+
+</ul>
+
+<h3>private_class_var_defined?(symbol)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="call_stack.html">call_stack</a></strong><br>
+
+</body></html>

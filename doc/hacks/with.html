@@ -1,0 +1,46 @@
+<html><head><title>hacks/with</title></head><body bgcolor=#ffffff><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#bb99ee><h1><font color=#000000>hacks/with</font></h1></td></tr></table>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>with(*objects, &block)</h3><ul><p>Call the given block once for each object.
+<p>Example:
+<pre>
+  class Foo
+    def foo; Kernel.puts "foo!"; end
+    def puts(*args); Kernel.puts 'bar!'; end
+  end
+<p>  f = Foo.new
+  with(f) do
+    foo         #=> foo!
+    puts 'foo'  #=&gt; bar!
+  end
+</pre>
+<p><p><p>
+<p><table cellspacing=0 cellpadding=0>
+<tr><th align='left'>objects&nbsp;&nbsp;</th><td>a list of objects to be processed.
+</td></tr>
+<tr><td></td></tr><tr><td></td></tr><tr><th align='left'>block&nbsp;&nbsp;</th><td>a block to be executed once for each object.
+</td></tr>
+</table>
+<p><strong>Returns:</strong> the last value from the last call to instance_eval.
+<p>
+</ul>
+
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#aaaaff><h2><font color=#000000>class WithDelegate &lt; KernellessObject</font></h2></td></tr></table><ul>A helper class for with().  WithDelegate delegates ALL method calls to
+the object it is initialized with, even calls to the kernel.
+<p>
+<p><table width=100% cellspacing=0 cellpadding=3><tr><td bgcolor=#ffaaff><h2><font color=#000000>Public Methods</font></h2></td></tr></table>
+
+<h3>initialize(obj, self_obj)</h3><ul><p>
+
+</ul>
+
+<h3>method_missing(method, *args, &block)</h3><ul><p>
+
+</ul>
+
+</ul>
+<h2>Requires</h2>
+<strong><a href="loaders.html">loaders</a></strong><br>
+<strong><a href="kernelless_object.html">kernelless_object</a></strong><br>
+
+</body></html>
